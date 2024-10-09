@@ -25,7 +25,7 @@ builder.Services.AddCors(options =>
                       });
 });
 builder.Services.AddDbContext<FreeMusicContext>(
-    options => options.UseSqlServer("Server=DESKTOP-UMS4CHV;Database=model;Trusted_Connection=True;TrustServerCertificate=true;"));
+    options => options.UseSqlServer("Server=LAPTOP-G3I5K23L\\SQLEXPRESS;Database=msdb;Trusted_Connection=True;TrustServerCertificate=true;"));
 
 builder.Services.Configure<MusicStoreDatabaseSettings>(
     builder.Configuration.GetSection("MusicStoreDatabase"));

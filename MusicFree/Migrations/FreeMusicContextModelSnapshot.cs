@@ -28,10 +28,7 @@ namespace MusicFree.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("AuthorId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid?>("MusicianId")
+                    b.Property<Guid>("Main_AuthorId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Name")
@@ -43,11 +40,24 @@ namespace MusicFree.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AuthorId");
-
-                    b.HasIndex("MusicianId");
+                    b.HasIndex("Main_AuthorId");
 
                     b.ToTable("albumns");
+                });
+
+            modelBuilder.Entity("MusicFree.Models.AlbumnAuthor", b =>
+                {
+                    b.Property<Guid>("AuthorId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("AlbumnId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("AuthorId", "AlbumnId");
+
+                    b.HasIndex("AlbumnId");
+
+                    b.ToTable("albumn_authors");
                 });
 
             modelBuilder.Entity("MusicFree.Models.Musician", b =>
@@ -74,9 +84,15 @@ namespace MusicFree.Migrations
                     b.Property<Guid?>("AlbumnId")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<Guid>("Main_AuthorId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("albumn_index")
+                        .HasColumnType("int");
 
                     b.Property<string>("song_filename")
                         .IsRequired()
@@ -85,6 +101,8 @@ namespace MusicFree.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("AlbumnId");
+
+                    b.HasIndex("Main_AuthorId");
 
                     b.ToTable("songs");
                 });
@@ -101,20 +119,35 @@ namespace MusicFree.Migrations
 
                     b.HasIndex("SongId");
 
-                    b.ToTable("SongAuthor");
+                    b.ToTable("song_authors");
                 });
 
             modelBuilder.Entity("MusicFree.Models.Albumn", b =>
                 {
+                    b.HasOne("MusicFree.Models.Musician", "Main_Author")
+                        .WithMany("Albumns")
+                        .HasForeignKey("Main_AuthorId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Main_Author");
+                });
+
+            modelBuilder.Entity("MusicFree.Models.AlbumnAuthor", b =>
+                {
+                    b.HasOne("MusicFree.Models.Albumn", "Albumn")
+                        .WithMany("Extra_Authors")
+                        .HasForeignKey("AlbumnId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
                     b.HasOne("MusicFree.Models.Musician", "Author")
-                        .WithMany()
+                        .WithMany("collaboration_albumns")
                         .HasForeignKey("AuthorId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("MusicFree.Models.Musician", null)
-                        .WithMany("Albumns")
-                        .HasForeignKey("MusicianId");
+                    b.Navigation("Albumn");
 
                     b.Navigation("Author");
                 });
@@ -126,21 +159,29 @@ namespace MusicFree.Migrations
                         .HasForeignKey("AlbumnId")
                         .OnDelete(DeleteBehavior.Restrict);
 
+                    b.HasOne("MusicFree.Models.Musician", "Main_Author")
+                        .WithMany("Songs")
+                        .HasForeignKey("Main_AuthorId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
                     b.Navigation("Albumn");
+
+                    b.Navigation("Main_Author");
                 });
 
             modelBuilder.Entity("MusicFree.Models.SongAuthor", b =>
                 {
                     b.HasOne("MusicFree.Models.Musician", "Author")
-                        .WithMany("Songs")
+                        .WithMany("collaboration_songs")
                         .HasForeignKey("AuthorId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("MusicFree.Models.Song", "Song")
-                        .WithMany("Authors")
+                        .WithMany("extra_authors")
                         .HasForeignKey("SongId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Author");
@@ -150,6 +191,8 @@ namespace MusicFree.Migrations
 
             modelBuilder.Entity("MusicFree.Models.Albumn", b =>
                 {
+                    b.Navigation("Extra_Authors");
+
                     b.Navigation("Songs");
                 });
 
@@ -158,11 +201,15 @@ namespace MusicFree.Migrations
                     b.Navigation("Albumns");
 
                     b.Navigation("Songs");
+
+                    b.Navigation("collaboration_albumns");
+
+                    b.Navigation("collaboration_songs");
                 });
 
             modelBuilder.Entity("MusicFree.Models.Song", b =>
                 {
-                    b.Navigation("Authors");
+                    b.Navigation("extra_authors");
                 });
 #pragma warning restore 612, 618
         }
