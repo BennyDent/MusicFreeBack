@@ -134,7 +134,21 @@ namespace MusicFree.Controllers
 
             return Ok();
         }
-        
+        [HttpGet("music/find_aithor/{name}")]
+        public async Task<ActionResult> FundAuthor(string name)
+        {
+            var authors_return = new List<AuthorReturn>();
+            var authors = _context.musicians.Where(a=>a.Name==name).ToList();
+            foreach (var author in authors)
+            {
+                authors_return.Add(new AuthorReturn(author.Id, author.Name));
+
+            }
+            return Ok(authors_return);
+        }
+
+
+
         [HttpPost("music/create_albumn/")]
         public async Task<ActionResult> CreateAlbumn(Albumn_Create albumn_input)
         {
