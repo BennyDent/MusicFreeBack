@@ -12,15 +12,15 @@ using MusicFree;
 namespace MusicFree.Migrations
 {
     [DbContext(typeof(FreeMusicContext))]
-    [Migration("20241008195743_first")]
-    partial class first
+    [Migration("20250310194602_neww")]
+    partial class neww
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.8")
+                .HasAnnotation("ProductVersion", "8.0.10")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -35,6 +35,10 @@ namespace MusicFree.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("cover_filename")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -63,6 +67,29 @@ namespace MusicFree.Migrations
                     b.ToTable("albumn_authors");
                 });
 
+            modelBuilder.Entity("MusicFree.Models.AlbumnViews", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("AlbumnId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("last_listened")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AlbumnId");
+
+                    b.ToTable("albumn_views");
+                });
+
             modelBuilder.Entity("MusicFree.Models.Musician", b =>
                 {
                     b.Property<Guid>("Id")
@@ -73,9 +100,64 @@ namespace MusicFree.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("img_filename")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.ToTable("musicians");
+                });
+
+            modelBuilder.Entity("MusicFree.Models.MusicianUser", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("AuthorId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("UsersId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AuthorId");
+
+                    b.ToTable("musicianUsers");
+                });
+
+            modelBuilder.Entity("MusicFree.Models.SearchModel", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("AlbumnId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("AuthorId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("is_albumn")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("timestamp")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AlbumnId");
+
+                    b.HasIndex("AuthorId");
+
+                    b.ToTable("searches");
                 });
 
             modelBuilder.Entity("MusicFree.Models.Song", b =>
@@ -96,6 +178,10 @@ namespace MusicFree.Migrations
 
                     b.Property<int?>("albumn_index")
                         .HasColumnType("int");
+
+                    b.Property<string>("cover_filename")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("song_filename")
                         .IsRequired()
@@ -118,11 +204,57 @@ namespace MusicFree.Migrations
                     b.Property<Guid>("SongId")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
+
                     b.HasKey("AuthorId", "SongId");
 
                     b.HasIndex("SongId");
 
                     b.ToTable("song_authors");
+                });
+
+            modelBuilder.Entity("MusicFree.Models.SongViews", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("SongId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("last_listened")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("SongId");
+
+                    b.ToTable("songsViews");
+                });
+
+            modelBuilder.Entity("MusicFree.Models.UserSong", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("SongId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("SongId");
+
+                    b.ToTable("likes");
                 });
 
             modelBuilder.Entity("MusicFree.Models.Albumn", b =>
@@ -155,12 +287,49 @@ namespace MusicFree.Migrations
                     b.Navigation("Author");
                 });
 
+            modelBuilder.Entity("MusicFree.Models.AlbumnViews", b =>
+                {
+                    b.HasOne("MusicFree.Models.Albumn", "albumn")
+                        .WithMany("albumn_views")
+                        .HasForeignKey("AlbumnId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("albumn");
+                });
+
+            modelBuilder.Entity("MusicFree.Models.MusicianUser", b =>
+                {
+                    b.HasOne("MusicFree.Models.Musician", "author")
+                        .WithMany("liked_by")
+                        .HasForeignKey("AuthorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("author");
+                });
+
+            modelBuilder.Entity("MusicFree.Models.SearchModel", b =>
+                {
+                    b.HasOne("MusicFree.Models.Albumn", "Albumn")
+                        .WithMany()
+                        .HasForeignKey("AlbumnId");
+
+                    b.HasOne("MusicFree.Models.Musician", "Author")
+                        .WithMany()
+                        .HasForeignKey("AuthorId");
+
+                    b.Navigation("Albumn");
+
+                    b.Navigation("Author");
+                });
+
             modelBuilder.Entity("MusicFree.Models.Song", b =>
                 {
                     b.HasOne("MusicFree.Models.Albumn", "Albumn")
                         .WithMany("Songs")
                         .HasForeignKey("AlbumnId")
-                        .OnDelete(DeleteBehavior.Restrict);
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("MusicFree.Models.Musician", "Main_Author")
                         .WithMany("Songs")
@@ -192,11 +361,35 @@ namespace MusicFree.Migrations
                     b.Navigation("Song");
                 });
 
+            modelBuilder.Entity("MusicFree.Models.SongViews", b =>
+                {
+                    b.HasOne("MusicFree.Models.Song", "song")
+                        .WithMany("song_views")
+                        .HasForeignKey("SongId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("song");
+                });
+
+            modelBuilder.Entity("MusicFree.Models.UserSong", b =>
+                {
+                    b.HasOne("MusicFree.Models.Song", "Song")
+                        .WithMany("liked_by")
+                        .HasForeignKey("SongId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Song");
+                });
+
             modelBuilder.Entity("MusicFree.Models.Albumn", b =>
                 {
                     b.Navigation("Extra_Authors");
 
                     b.Navigation("Songs");
+
+                    b.Navigation("albumn_views");
                 });
 
             modelBuilder.Entity("MusicFree.Models.Musician", b =>
@@ -208,11 +401,17 @@ namespace MusicFree.Migrations
                     b.Navigation("collaboration_albumns");
 
                     b.Navigation("collaboration_songs");
+
+                    b.Navigation("liked_by");
                 });
 
             modelBuilder.Entity("MusicFree.Models.Song", b =>
                 {
                     b.Navigation("extra_authors");
+
+                    b.Navigation("liked_by");
+
+                    b.Navigation("song_views");
                 });
 #pragma warning restore 612, 618
         }

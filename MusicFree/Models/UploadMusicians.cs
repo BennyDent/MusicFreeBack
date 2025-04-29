@@ -2,7 +2,7 @@
 {
     public class UploadMusicians
     {
-        public string Name { get; set; }
+        public string name { get; set; }
 
     }
 }
