@@ -356,16 +356,16 @@ namespace MusicFree.Controllers
         }
 
 
-        [Route("last/songs")]
+        [Route("last/songs/{page_size}")]
         [Authorize]
-        public async Task<ActionResult> LastSongs()
+        public async Task<ActionResult> LastSongs(int page_size)
         {
 
 
                
             var ms = new MusicService();
             var user = await _userManager.GetUserAsync(HttpContext.User);
-            var songviews = _context.songsViews.Where(a => a.UserId == user.Id).OrderByDescending(a => a.last_listened).Take(10).ToList();
+            var songviews = _context.songsViews.Where(a => a.UserId == user.Id).OrderByDescending(a => a.song_listened).Take(10).ToList();
             var result = new List<SongReturn>();
             foreach (var songview in songviews) {
                 var song = songview.song;

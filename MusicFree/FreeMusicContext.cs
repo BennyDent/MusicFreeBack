@@ -28,7 +28,7 @@ namespace MusicFree
 
         public DbSet<Tags> tags { get; set; }
         public DbSet<Genres> genres { get; set; }
-  
+        public DbSet<AppearedSongs> apeared_songs { get; set; }
  
     protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

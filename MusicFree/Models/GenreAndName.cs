@@ -1,17 +1,21 @@
-﻿namespace MusicFree.Models
+﻿using System.ComponentModel.DataAnnotations;
+namespace MusicFree.Models
 {
     public class GenreAndName
     {
 
-        public Guid Id { get; set; }
+        [Key]
         public string Name { get; set; }
-        public  ICollection<Song> songs { get; set; }
+        public  ICollection<GenreAndNameCollection> songs { get; set; }
+
+        public ICollection<GenreAndNameCollection> similar { get; set; }
         public GenreAndName()
         { }
         public GenreAndName(string name)
         {
-        Id = Guid.NewGuid();
-        songs = new List<Song>();
+        
+        songs = new List<GenreAndNameCollection>();
+        similar = new List<GenreAndNameCollection>();
         Name = name;
         }
     }

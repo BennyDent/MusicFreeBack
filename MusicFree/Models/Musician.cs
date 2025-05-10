@@ -12,6 +12,10 @@ namespace MusicFree.Models
         public ICollection<AlbumnAuthor> collaboration_albumns { get; set; }
         public ICollection<Albumn> Albumns { get; set; }
         public ICollection<MusicianUser> liked_by { get; set; }
+
+        public ICollection<GenreAndNameCollection> genres { get; set; }
+
+        public ICollection<GenreAndNameCollection> tags    { get; set; }
         public string img_filename { get; set; }
        public Musician() {
             liked_by = new List<MusicianUser>();
@@ -19,6 +23,8 @@ namespace MusicFree.Models
         }
        public Musician(string name)
         {
+            genres = new List<GenreAndNameCollection>();
+            tags = new List<GenreAndNameCollection>();
             img_filename = Guid.NewGuid().ToString();
             Id = Guid.NewGuid();
             Name = name;
