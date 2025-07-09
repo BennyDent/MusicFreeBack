@@ -97,27 +97,7 @@ namespace MusicFree.Controllers
             return new EmptyResult();
         }
 
-        [Authorize]
-        [Route("")]
-        [HttpGet("/music/last_albumns")]
-        public async Task<ActionResult> LastUserAlbumns(){
-
-            var ms = new MusicService();    
-            var albumns_return = new List<AlbumnRethurn>();
-
-
-            var user= await _userManager.GetUserAsync(HttpContext.User);
-            var albumns = _context.albumns.Where(a => a.liked_by.Where(a => a.UserId == user.Id).Any()).OrderBy(a=>a.albumn_views.Where(a=> a.UserId==user.Id)
-            .OrderBy(a=> a.last_listened).Take(10)).ToList();
-
-
-            foreach (var albumn in albumns)
-            {
-                albumns_return.Add(ms.AlbumnReturn(albumn));
-            }
-
-            return Ok();
-        }
+       
 
 
         [Route("music/create_albumn/")]

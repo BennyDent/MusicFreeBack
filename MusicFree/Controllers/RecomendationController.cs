@@ -438,7 +438,7 @@ List<Tags> AuthorTags(Musician author)
 
 
         [NonAction]
-        public async Task<List<GenreTag>> StringArrayToObjects(List<string> string_array, bool is_tag)
+        public List<GenreTag> StringArrayToObjects(List<string> string_array, bool is_tag)
         {
            var result_array = new List<GenreTag>();
 
@@ -488,13 +488,26 @@ List<Tags> AuthorTags(Musician author)
            
                 if (tag_list != null && genre_list !=null)
             {
-                var tags_array = await StringArrayToObjects(tag_list, true);
-                var genres_array = await StringArrayToObjects(genre_list, false);
-                new_song = _context.songs.Where(a => (TagCompare(SongToTags(a), tags_array)&& GenreCompare(SongToGenres(a), genres_array)) &&
-                AuthorPossiibility(user)).OrderBy(x => rnd.Next()).Take(next_index).ToList();
+                var tags_array =  StringArrayToObjects(tag_list, true).ConvertAll(a => (Tags)a);
+                var genres_array = StringArrayToObjects(genre_list, false).ConvertAll(a => (Genre)a);
+                
+                Boolean SimilarCompare(Song a, Boolean is_similar)
+                {
+                    return (TagCompare(SongtoTags(a), tags_array, is_similar) && GenreCompare(SongtoGenres(a), genres_array, is_similar)) &&
+                                    AuthorPossiibility(user);
+
+                }
+
+                 new_song = _context.songs.Where(a => ).OrderBy(x => rnd.Next()).Take(next_index).ToList();
+                if (next_index>= 2)
+                {
+                    new_song.Concat(_context.songs.Where(a => (TagCompare(SongtoTags(a), tags_array, true) && GenreCompare(SongtoGenres(a), genres_array, true)) &&
+                AuthorPossiibility(user)).OrderBy(x => rnd.Next()).Take(next_index).ToList()));
+                }
+
                if(new_song.Count == 0)
                 {
-                    new_song = _context.songs.Where(a => (TagCompare(CollectionSongtoTag(a.tags), tags_array)) &&
+                    new_song = _context.songs.Where(a => (TagCompare(SongtoTags(a), tags_array, true)) &&
                 AuthorPossiibility(user)).OrderBy(x => rnd.Next()).Take(next_index).ToList();
                 }
             }
@@ -506,18 +519,18 @@ List<Tags> AuthorTags(Musician author)
                     .OrderBy(x => rnd.Next()).Take(next_index).ToList();
                 if (new_song.Count == 0)
                 {
-                    new_song = _context.songs.Where(a => (TagCompare(CollectionSongtoTag(a.tags), tags_array)))
+                    new_song = _context.songs.Where(a => (TagCompare(SongtoTags(a), tags_array, true)))
                      .OrderBy(x => rnd.Next()).Take(next_index).ToList();
                 }
             }
             else
             {
                 var genres_array = await StringArrayToObjects(genre_list, false);
-                new_song = _context.songs.Where(a => (TagCompare(CollectionSongtoTag(a.tags), genres_array)) &&
+                new_song = _context.songs.Where(a => (TagCompare(CollectionSongtoTag(a), genres_array)) &&
                  AuthorPossiibility(user)).OrderBy(x => rnd.Next()).Take(next_index).ToList();
                 if (new_song.Count == 0)
                 {
-                    new_song = _context.songs.Where(a => (TagCompare(CollectionSongtoTag(a.tags), genres_array)))
+                    new_song = _context.songs.Where(a => (TagCompare(CollectionSongtoTag(a), genres_array)))
                         .OrderBy(x => rnd.Next()).Take(next_index).ToList();
                 }
             }
