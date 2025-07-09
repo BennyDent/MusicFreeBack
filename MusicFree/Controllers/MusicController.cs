@@ -17,6 +17,8 @@ using Microsoft.AspNetCore.Authorization;
 using Org.BouncyCastle.Utilities;
 using static System.Net.Mime.MediaTypeNames;
 using MusicFree.Models.AutenthicationModels;
+using MusicFree.Models.InputModels;
+using MusicFree.Models.ExtraModels;
 namespace MusicFree.Controllers
 {
 
@@ -24,6 +26,7 @@ namespace MusicFree.Controllers
     public class MusicController : Controller
     {
         private readonly FreeMusicContext _context;
+        private readonly UserContext _userContext;
         private readonly UserManager<User> _userManager;
         public MusicController(UserManager<User> userManager, FreeMusicContext context)
         {
@@ -71,105 +74,7 @@ namespace MusicFree.Controllers
 
             return Ok();
         }
-        [Route("music/song_upload")]
-        [HttpPost("music/song_upload")]
-        [DisableFormValueModelBinding]
-        public async Task<ActionResult> UplaodSong(IOptions<JsonOptions> jsonOptions) {
-            var name = "";
-            Musician author = new Musician(name);
-            var albumn = Guid.NewGuid();
-            var context = HttpContext;
-            var song = new MemoryStream();
-            GridFsPlayer ms = new GridFsPlayer();
-            var authors_id = new List<Guid>();
-            var song_src = "";
-            string boundary = MultipartRequestHelper.GetBoundary(MediaTypeHeaderValue.Parse(Request.ContentType), 500);
-            var image = new MemoryStream();
-            var multipartReader = new MultipartReader(boundary, context.Request.Body);
-
-            while (await multipartReader.ReadNextSectionAsync() is { } section)
-            {
-                var section_name = MultipartRequestHelper.GetName(section.ContentDisposition);
-                Console.WriteLine(section_name);
-                if (section_name == "cover")
-                {
-                    song_src = Guid.NewGuid().ToString();
-                    await section.Body.CopyToAsync(image);
-                    image.Position = 0;
-                    ms.UploadFile(song_src, image);
-
-                }
-
-                if (section_name == "name")
-                {
-                    StreamReader reader = new StreamReader(section.Body);
-                    string text = reader.ReadToEnd();
-                    name = text;
-
-                    Console.WriteLine(name);
-                }
-                if (section_name == "main_author")
-                {
-                    StreamReader reader = new StreamReader(section.Body);
-                    string text = reader.ReadToEnd();
-                    var author_id = Guid.Parse(text.Split('"')[1].Split('"')[1]);
-                    author = _context.musicians.Find(author_id);
-                }
-
-                if (section_name == "extra_authors")
-                { StreamReader reader = new StreamReader(section.Body);
-                    string text = reader.ReadToEnd();
-                    var array = MultipartRequestHelper.AuthorStringSplit(text);
-                    //добавить
-                    var extra_authors = new List<Musician>();
-                    foreach (var item in array)
-                    {
-
-                        var author_id = Guid.Parse(item.Split('"')[1].Split('"')[1]);
-                        authors_id.Add(author_id); }
-                }
-
-
-
-
-                if (section_name == "albumn")
-                {
-                    StreamReader reader = new StreamReader(section.Body);
-                    string for_albumn = reader.ReadToEnd(); ;
-                    if (for_albumn == "")
-                    {
-                        albumn = Guid.Empty;
-                    }
-                    else
-                    {
-                        albumn = Guid.Parse(for_albumn);
-                    }
-
-                }
-                if (section_name == "song")
-                {
-                    await section.Body.CopyToAsync(song);
-                }
-            }
-            var for_filename = Guid.NewGuid();
-            var file_name = for_filename.ToString();
-
-            ms.UploadFile(file_name, song);
-
-
-            Song new_song = new Song(name, author);
-            if (albumn != Guid.Empty)
-            {
-                Albumn albumn_model = _context.albumns.Find(albumn);
-                new_song.Albumn = albumn_model;
-            }
-            new_song.song_filename = name;
-            new_song.cover_filename = song_src;
-
-            _context.songs.Add(new_song);
-            await _context.SaveChangesAsync();
-            return Ok();
-        }
+ 
         [Route("music/get_song/{filename}")]
         [HttpGet]
         public async Task<ActionResult> GetSong(string filename)
@@ -191,7 +96,29 @@ namespace MusicFree.Controllers
 
             return new EmptyResult();
         }
-       
+
+        [Authorize]
+        [Route("")]
+        [HttpGet("/music/last_albumns")]
+        public async Task<ActionResult> LastUserAlbumns(){
+
+            var ms = new MusicService();    
+            var albumns_return = new List<AlbumnRethurn>();
+
+
+            var user= await _userManager.GetUserAsync(HttpContext.User);
+            var albumns = _context.albumns.Where(a => a.liked_by.Where(a => a.UserId == user.Id).Any()).OrderBy(a=>a.albumn_views.Where(a=> a.UserId==user.Id)
+            .OrderBy(a=> a.last_listened).Take(10)).ToList();
+
+
+            foreach (var albumn in albumns)
+            {
+                albumns_return.Add(ms.AlbumnReturn(albumn));
+            }
+
+            return Ok();
+        }
+
 
         [Route("music/create_albumn/")]
         [HttpPost("music/create_albumn/")]
@@ -233,7 +160,7 @@ namespace MusicFree.Controllers
             foreach (var song in albumn_input.songs)
             {
 
-                Song new_song = new Song(song.name, main_author);
+                Song new_song = new Song(song.name, main_author, album);
                // new_song.extra_authors.Add(GetSongAuthors(song.extra_authors, new_song)); изменить так что бы не было присваивания
                 new_song.Albumn = album;
                 new_song.albumn_index = song.index;
@@ -314,42 +241,53 @@ namespace MusicFree.Controllers
         }
 
 
-        [Route("music/song_listened/{song_filename}")]
+        [Route("music/song_listened/{song_id}")]
         [Authorize]
-        [HttpPost("music/song_listened/{song_filename}")]
-        public async Task<ActionResult> Song_listened(string song_filename)
+        [HttpPost("music/song_listened/{song_id}")]
+        public async Task<ActionResult> Song_listened(Guid song_id)
         {
 
             var user = await _userManager.GetUserAsync(HttpContext.User);
 
-            var song = _context.songs.Where(a => a.song_filename == song_filename).First();
-           
-            if (song.Albumn != null)
+            var song = await  _context.songs.FindAsync(song_id);
+
+            if (song.Albumn.albumn_views.Where(a => a.UserId == user.Id).Any())
             {
-                if(song.Albumn.albumn_views.Where(a=> a.UserId == user.Id).FirstOrDefault()!= null)
-                {
-                    song.Albumn.albumn_views.Where(a => a.UserId == user.Id).First().last_listened = DateTime.Now;
-                    await _context.SaveChangesAsync();
-                }
-                else
-                {
-                    var albumn_listened = new AlbumnViews(user.Id, song.Albumn.Id,  song.Albumn, DateTime.Now);
-                    user.albumn_views.Add(albumn_listened.Id);
-                    song.Albumn.albumn_views.Add(albumn_listened);
-                    _context.albumn_views.Add(albumn_listened);
-                }
+
+                song.Albumn.albumn_views.Where(a => a.UserId == user.Id).First().last_listened = DateTime.Now;
+                await _context.SaveChangesAsync();
             }
-            if (song.song_views.Where(a => a.UserId == user.Id).FirstOrDefault() != null)
+            else
+            {
+                var albumn_listened = new AlbumnViews(user.Id, song.Albumn.Id, song.Albumn, DateTime.Now);
+                user.albumn_views.Add(albumn_listened.Id);
+                song.Albumn.albumn_views.Add(albumn_listened);
+                _context.albumn_views.Add(albumn_listened);
+            }
+            
+            if (song.song_views.Where(a => a.UserId == user.Id).Any())
             {
                 song.song_views.Where(a => a.UserId == user.Id).First().last_listened = DateTime.Now;
+                song.song_views.Where(a => a.UserId == user.Id).First().listened++;
                 await _context.SaveChangesAsync();
                 return Ok();
             }
-            var song_listened = new SongViews(user.Id, song.Id, user, song, DateTime.Now);
-            user.song_views.Add(song_listened.Id);
+            if (_context.songsViews.Where(a=> a.UserId==user.Id && a.SongId==song.Id).Any())
+            {
+                var to_change = _context.songsViews.Where(a => a.UserId == user.Id && a.SongId == song.Id).First();
+                to_change.last_listened = DateTime.Now;
+                to_change.listened++;
+                await _context.SaveChangesAsync();
+            }
+            else
+            {
+                var song_listened = new SongViews(user.Id, song.Id, song);
+            user.song_views.Add(song.Id);
             song.song_views.Add(song_listened);
             _context.songsViews.Add(song_listened);
             await _context.SaveChangesAsync();
+            }
+           
 
 
             return Ok();
@@ -365,7 +303,7 @@ namespace MusicFree.Controllers
                
             var ms = new MusicService();
             var user = await _userManager.GetUserAsync(HttpContext.User);
-            var songviews = _context.songsViews.Where(a => a.UserId == user.Id).OrderByDescending(a => a.song_listened).Take(10).ToList();
+            var songviews = _context.songsViews.Where(a => a.UserId == user.Id).Take(10).ToList();
             var result = new List<SongReturn>();
             foreach (var songview in songviews) {
                 var song = songview.song;

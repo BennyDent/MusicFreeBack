@@ -15,16 +15,16 @@ namespace MusicFree.Models
         public Song song { get; set; }
 
         
-
+        public int listened { get; set; }
         public DateTime last_listened { get; set; }
         public SongViews() { }
-        public SongViews( string userId, Guid songId,User user, Song song, DateTime lastlistened)
+        public SongViews( string userId, Guid songId, Song song)
         {
-            last_listened = lastlistened;
+            last_listened = DateTime.Now;
             Id = Guid.NewGuid();
             UserId = userId;
             SongId = songId;
-            
+            listened = 0;
             this.song = song;
         }
       

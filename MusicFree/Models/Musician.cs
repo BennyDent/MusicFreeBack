@@ -1,10 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using MusicFree.Models.GenreAndName;
 using System.ComponentModel.DataAnnotations;
 namespace MusicFree.Models
 {
     public class Musician
     {
-       
+
+        [Key]
         public Guid Id { get; set; }
         public string Name { get; set; }
         public ICollection<Song> Songs { get; set; }
@@ -26,7 +28,7 @@ namespace MusicFree.Models
             genres = new List<GenreAndNameCollection>();
             tags = new List<GenreAndNameCollection>();
             img_filename = Guid.NewGuid().ToString();
-            Id = Guid.NewGuid();
+          
             Name = name;
             Songs = new List<Song>();
             collaboration_songs = new List<SongAuthor>();

@@ -23,18 +23,21 @@ namespace MusicFree.Controllers
     public class AuthenticationController : Controller
     {
         private readonly FreeMusicContext _context;
+        private readonly UserContext _user_context;
         private readonly UserManager<User> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly IConfiguration _configuration;
         public AuthenticationController(
             UserManager<User> userManager,
             RoleManager<IdentityRole> roleManager,
-            IConfiguration configuration, FreeMusicContext context)
+            IConfiguration configuration, FreeMusicContext context, UserContext user_context)
         {
+            _user_context = user_context;
             _context = context;
             _userManager = userManager;
             _roleManager = roleManager;
             _configuration = configuration;
+            _user_context = user_context;
         }
 
         [NonAction]
@@ -68,9 +71,13 @@ namespace MusicFree.Controllers
 
             Console.WriteLine(ConfirmEmailCode());
             User user = new User(Input.Email, Input.Username, ConfirmEmailCode());
+            var radio = new UserRadio(user);
+            user.radio = radio;
             var result = await _userManager.CreateAsync(user, Input.Password);
             if (result.Succeeded)
             {
+                _user_context.radios.Add(radio);
+                await _user_context.SaveChangesAsync();
                 Console.WriteLine(4);
                 // генерация токена для пользователя
 

@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using MusicFree.Models;
+using MusicFree.Models.GenreAndName;
 using System.Reflection.Emit;
 using Microsoft.AspNetCore.Identity;
 namespace MusicFree
@@ -24,11 +25,24 @@ namespace MusicFree
         public DbSet<AlbumnViews> albumn_views { get; set; }
 
         public DbSet <UserSong> likes { get; set; }
-        public FreeMusicContext(DbContextOptions options) : base(options) { }
+
 
         public DbSet<Tags> tags { get; set; }
-        public DbSet<Genres> genres { get; set; }
-        public DbSet<AppearedSongs> apeared_songs { get; set; }
+        public DbSet<Genre> genres { get; set; }
+      
+       
+        public DbSet<GenretoSong> genre_song { get; set; }
+
+        public DbSet<GenretoAlbumn> genre_albumn { get; set; }
+
+        public DbSet<TagtoAlbumn> tag_albumn { get; set; }
+
+        public DbSet<TagtoSong> tag_song { get; set; }
+
+        public DbSet<GenreGenre> similar_genre { get; set; }
+
+        public DbSet<TagTag> similar_tag { get; set; }
+        public FreeMusicContext(DbContextOptions options) : base(options) { }
  
     protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -42,14 +56,25 @@ namespace MusicFree
          
             modelBuilder.Entity<MusicianUser>().HasOne(b => b.author).WithMany(a => a.liked_by).HasForeignKey(b => b.AuthorId);
 
-          
 
-          
+           
 
-          
+            modelBuilder.Entity<TagtoAlbumn>().HasOne(a => a.albumn).WithMany(a=>a.tags).HasForeignKey(a=> a.albumn_id);
+            modelBuilder.Entity<TagtoAlbumn>().HasOne(a => a.tag).WithMany(a => a.albumns).HasForeignKey(a => a.tag_id);
+
+            modelBuilder.Entity<TagtoSong>().HasOne(a => a.song).WithMany(a => a.tags).HasForeignKey(a => a.song_id);
+
+            modelBuilder.Entity<GenreGenre>().HasOne(a=>a.first).WithMany(a=> a.similar).HasForeignKey(a => a.first_id);
+
+            modelBuilder.Entity<GenreGenre>().HasOne(a=> a.second).WithMany(a=> a.similar).HasForeignKey(a=> a.second_id);
+
+            modelBuilder.Entity<TagTag>().HasOne(a => a.first).WithMany(a => a.similar).HasForeignKey(a => a.first_id);
+
+            modelBuilder.Entity<TagTag>().HasOne(a => a.second).WithMany(a => a.similar).HasForeignKey(a => a.second_id);
 
 
             modelBuilder.Entity<AlbumnViews>().HasOne(b => b.albumn).WithMany(a => a.albumn_views).HasForeignKey(b => b.AlbumnId);
+          
 
            modelBuilder.Entity<Song>().HasMany(a =>a.liked_by).WithOne(a => a.Song).HasForeignKey(a => a.SongId);
 

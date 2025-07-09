@@ -42,7 +42,7 @@ namespace MusicFree.Controllers
             }
 
             foreach(var playlist in playlists) {
-                playlist_return.Add(new NameIdReturnData(playlist.Name,playlist.Id));
+                playlist_return.Add(new NameIdReturnData(playlist.Name));
             }
 
             return Ok(new { hasMore = ishasMore, playlists = playlist_return });

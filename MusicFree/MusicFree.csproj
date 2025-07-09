@@ -7,10 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Models\AppearedSongs.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="EntityFramework" Version="6.5.1" />
     <PackageReference Include="HotChocolate.AspNetCore" Version="13.9.12" />
     <PackageReference Include="HotChocolate.Data.EntityFramework" Version="13.9.12" />
@@ -37,10 +33,6 @@
 
   <ItemGroup>
     <Folder Include="Context\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="Models\AppearedSongs.cs" />
   </ItemGroup>
 
 </Project>

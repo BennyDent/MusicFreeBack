@@ -18,6 +18,7 @@ public class MusicService
 
        
 
+      
         
         public List<AuthorReturn> ExtraAuthorsReturn(ICollection<SongAuthor> list)
         {
@@ -53,6 +54,19 @@ public class MusicService
                     );
         
         }
+
+
+        public List<SongReturn> SongstoSongReturns(List<Song> songs, User user) { 
+        
+        var songs_return = new List<SongReturn>();
+
+            foreach (Song song in songs)
+            {
+            songs_return.Add(SongToSongReturn(song, user)); 
+            }
+            return songs_return;
+        }
+
 
         public int AlbumnViews(Albumn a)
         {

@@ -12,17 +12,22 @@ namespace MusicFree.Models
 
         public IList<Guid> song_views { get; set; }
 
-        public IList<Guid> last_search        {get;set; }
+        public IList<Guid> last_search { get; set; }
 
         public IList<Guid> albumn_views { get; set; }
 
         public IList<Guid> playlists { get; } = new List<Guid>();
+
+        public UserRadio radio { get; set; }
 
         public string confirm_code { get; set; }
     public User() {
 
             song_likes = new List<Guid>();
             song_views = new List<Guid>();
+            last_search = new List<Guid>();
+            albumn_views = new List<Guid>();
+            
         }
       public User(string email, string username, string Confirm_code)
         { 
@@ -36,6 +41,7 @@ namespace MusicFree.Models
             confirm_code = Confirm_code;
             last_search = new List<Guid>(); 
             albumn_views = new List<Guid>();
+            
         }
     }
 }
