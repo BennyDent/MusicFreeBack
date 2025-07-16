@@ -8,9 +8,11 @@ using MongoDB.Driver;
 using MongoDB.Driver.Core.Operations;
 using MusicFree.Models;
 using MusicFree.Models.GenreAndName;
+using MusicFree.Models.DataReturnModel;
 using MusicFree.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.Identity.Client;
+using Org.BouncyCastle.Bcpg;
 
 namespace MusicFree.Controllers
 {
@@ -210,10 +212,21 @@ namespace MusicFree.Controllers
         [Route("music/liked/last/albumns/{pages_index}/{page_size}/")]
         [HttpGet]
         public async  Task<ActionResult> LikedLastAlbumns(int pages_index, int page_size )
-        {
+        { var isMore = true;
             var user = await _userManager.GetUserAsync(HttpContext.User);
-            var albumns = _context.albumns.Where(a=> a.albumn_views.Where(a=> a.UserId==user.Id).Any()).OrderBy().Take();
+            var albumns = _context.albumn_views.Where(a=> a.albumn.liked_by.Where(b=>b.UserId==user.Id).Any()).OrderBy(a => a.last_listened)
+                .Skip(page_size*pages_index).Take(page_size).Select(a=>a.albumn).ToList();
+            if (albumns.Count <= page_size)
+            {
+                isMore = false;
+            }
+            var result = new List<AlbumnReturn>();
+            foreach(var albumn in albumns)
+            {
+                result.Add(new AlbumnReturn(albumn));
+            }
 
+            return Ok(new { isMore = isMore, page = result });
         } 
 
 
@@ -585,7 +598,15 @@ namespace MusicFree.Controllers
         
         }
 
- 
+
+        [Authorize(Roles="User")]
+        [Route("radio/listened/albumns")]
+        public async Task<ActionResult> AlbumnsStartedListen()
+        {
+            var user = await _userManager.GetUserAsync(User);
+            var albumns = _context.albumns.Where(a=>a.Songs.Where(a=> a.song_views.Where(b=>b.UserId==user.Id).Any()).ToList().Count>1)
+                .OrderBy(a=>a.albumn_views.Where(b=> b.UserId==user.Id).First().last_listened).ToList()
+        }
 
         
 

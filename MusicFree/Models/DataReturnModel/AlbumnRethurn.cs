@@ -3,7 +3,7 @@
     public class AlbumnReturn:ReturnParent
     {
        
-        public AuthorReturn main_author { get; set; }
+        public AlbumnReturn main_author { get; set; }
         public List<AuthorReturn> extra_author { get; set; }
       
      

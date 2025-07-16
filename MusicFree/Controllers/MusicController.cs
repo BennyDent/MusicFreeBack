@@ -471,13 +471,14 @@ namespace MusicFree.Controllers
              .Select(a=> new AuthorSearchReturn(a.last_searched,new AuthorReturn(a.Author))).ToList();
             var songs = _context.songlastSearches.Where(isSame).OrderBy(LastSearchOrder).Take(5)
                 .Select(a=> new SongSearchReturn(a.last_searched, new SongReturn(a.Song,isUser(a.Song, user)))).ToList();
-            var albumn = _context.albumnlastSearches.Where(isSame).OrderBy(LastSearchOrder).Take(5).Select(a => new AlbumnReturn(a.Albumn)).ToList();
+            var albumn = _context.albumnlastSearches.Where(isSame).OrderBy(LastSearchOrder).Take(5).Select(a => new AlbumnSearchReturn(a.last_searched,
+                new AlbumnReturn(a.Albumn))).ToList();
 
-            var result = new List<LastSearchParent>();
+            var result = new List<SearchReturn>();
 
             result = result.Concat(musicians).Concat(songs).Concat(albumn).OrderBy(a=> a.last_searched).ToList();
 
-            return Ok();
+            return Ok(result.Select(a=> a.returnParent).ToList());
         }
         [Authorize]
         [Route("search/add_last/")]

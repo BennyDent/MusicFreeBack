@@ -4,9 +4,11 @@
     {
         public DateTime last_searched { get; set; }
 
-
-        public SearchReturn(DateTime LastSearched) {
+        public ReturnParent returnParent {get; set;}
+        public SearchReturn(DateTime LastSearched, ReturnParent ReturnParent )
+        {
             last_searched = LastSearched;
+            returnParent = ReturnParent;
         }
 
     }
