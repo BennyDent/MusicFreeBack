@@ -7,6 +7,8 @@ namespace MusicFree.Models
         [Key]
     public Guid Id { get; set; }
     public User user { get; set; }
+
+    public string user_id { get; set; }
     public List<Guid> radio_history { get; set; }
     public Queue<Guid> radio_stack { get; set; }
     public int radio_index { get; set; }

@@ -12,7 +12,9 @@
         {
             song = Song;
             song_id = Song.Id;
-
+            genre = genre;
+            genre_id = genre.Name;
+            Id = Guid.NewGuid();
         }
     }
 }

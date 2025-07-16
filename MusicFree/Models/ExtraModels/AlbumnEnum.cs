@@ -3,7 +3,7 @@
   
     
 
-enum AlbumnType
+public enum AlbumnType
     {
         albumn,
         ep,

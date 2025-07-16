@@ -6,7 +6,7 @@ using MusicFree.Models.GenreAndName;
 using System.ComponentModel.DataAnnotations.Schema;
 namespace MusicFree.Models
 {
-    public class Song
+    public class Song: MainParent
     {
         [Key]
        public Guid Id  { get; set; }
@@ -31,8 +31,9 @@ namespace MusicFree.Models
         public ICollection<UserSong> liked_by { get; }
         public  int albumn_index { get; set; }
         public int listened {  get; set; }  
-        public string cover_filename { get; set; }
-        public string song_filename    { get; set; }
+        public string cover_src { get; set; }
+      
+        public ICollection<SongLastSearch> lastSearch { get; set; }
         public ICollection<SongViews> song_views { get; set; } 
 
 
@@ -44,8 +45,9 @@ namespace MusicFree.Models
             
         }
         public Song(string name, Musician main_author, Albumn albumn)
-        {  cover_filename = Guid.NewGuid().ToString();
+        {  cover_src = Guid.NewGuid().ToString();
             Name = name;
+            lastSearch = new List<SongLastSearch>();
             extra_authors = new List<SongAuthor>();
             Main_Author = main_author;
             liked_by = new List<UserSong>();

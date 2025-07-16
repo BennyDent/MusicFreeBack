@@ -9,10 +9,13 @@ namespace MusicFree.Models.GenreAndName
 
         public TagtoSong() { }
 
-        public TagtoSong(Tags tag, Song Song)
+        public TagtoSong(Tags _tag, Song Song)
         {
            song = Song;
             song_id = Song.Id;
+            tag = _tag;
+            tag_id = _tag.Name;
+            Id = Guid.NewGuid();
 
         }
 

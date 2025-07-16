@@ -70,7 +70,7 @@ namespace MusicFree.Controllers
             
 
             Console.WriteLine(ConfirmEmailCode());
-            User user = new User(Input.Email, Input.Username, ConfirmEmailCode());
+            User user = new User( Input.Username, ConfirmEmailCode(),Input.Email);
             var radio = new UserRadio(user);
             user.radio = radio;
             var result = await _userManager.CreateAsync(user, Input.Password);
@@ -97,10 +97,59 @@ namespace MusicFree.Controllers
             return Ok(new { email = Input.Email });
         }
 
+
+        [Route("/auth/guest/login/")]
+        [HttpPost]
+        public async Task<ActionResult> GuestLogin()
+        {
+
+            var user = new User();
+            user.radio = new UserRadio(user);
+            var result = await _userManager.CreateAsync(user);
+            if (result.Succeeded)
+            {
+                var authClaims = new List<Claim>
+            {new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
+                    new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+            };
+                var token = GetToken(authClaims);
+
+                return Ok(new { token = new JwtSecurityTokenHandler().WriteToken(token) });            }
+            else
+            {
+            return StatusCode(StatusCodes.Status500InternalServerError, new { Status = "Error", Message = "User doesn't exist!" });
+            }
+                
+        }
+
+
+        [Authorize(Roles = "Guest")]
+        [Route("auth/guest/delete")]
+        [HttpDelete]
+        public async Task<ActionResult> GuestDeleteAccount()
+        {
+            var user = await _userManager.GetUserAsync(HttpContext.User);
+            var result = await _userManager.DeleteAsync(user);
+            if (result.Succeeded)
+            {
+
+                return Ok();
+            }
+            else
+            {
+
+                return BadRequest();
+            }  
+
+
+        }
+
+        
         [Route("/auth/login")]
         [HttpPost("/auth/login")]
         public async Task<IActionResult> Login(LoginInput Input)
         {
+            
             Console.WriteLine(Input.Email);
             var user = await _userManager.FindByEmailAsync(Input.Email);
             if (user == null)

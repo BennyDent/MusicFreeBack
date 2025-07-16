@@ -1,8 +1,11 @@
-﻿namespace MusicFree.Models.GenreAndName
+﻿using System.ComponentModel.DataAnnotations;
+namespace MusicFree.Models.GenreAndName
 {
     // жанры и тэги прослушанные
     public class GenreAndName_User
     {
+        [Key]
+        public Guid Id { get; set; }
         public string user_id { get; set; }
 
        
@@ -19,7 +22,7 @@
 
         public GenreAndName_User(string User_Id)
         {
-           
+            Id = Guid.NewGuid();
             user_id = User_Id;
             listened = 0;
             last_listened = DateTime.Now;

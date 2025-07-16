@@ -1,244 +1,39 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using MusicFree.Models;
+﻿
+using HotChocolate.Language;
 using Microsoft.AspNetCore.Identity;
-using HotChocolate.Authorization;
-using MusicFree.Services;
-
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System.Reflection.PortableExecutable;
-using System.ComponentModel;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 using MongoDB.Driver;
 using MongoDB.Driver.Core.Operations;
-using System.Runtime.InteropServices;
-using System.Linq;
-using HotChocolate.Language;
+using MusicFree.Models;
 using MusicFree.Models.GenreAndName;
-using Microsoft.EntityFrameworkCore.ChangeTracking;
-
+using MusicFree.Services;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.Identity.Client;
 
 namespace MusicFree.Controllers
 {
     [ApiController]
     public class RecomendationController : Controller
     {
+
+        private readonly Random _rnd;
         private readonly UserContext _user_context;
         private readonly FreeMusicContext _context;
         private readonly UserManager<User> _userManager;
+        private readonly MusicService _ms;
+        private readonly ContextMusicService _cms;
         public RecomendationController(UserManager<User> userManager, FreeMusicContext context)
         {
             _userManager = userManager;
             _context = context;
+            _rnd = new Random();
+            _ms = new MusicService();
+            _cms = new ContextMusicService(_userManager, _context, _user_context);
         }
 
- [NonAction]
-       public  List<Genre> CollectionToGenre(List<GenreCollection> input)
-            {
-                var  genres = new List<Genre>();    
-                foreach (var genre in input)
-                {
-                    genres.Add(genre.genre);
-                }
-                return genres;
-            }
-
-        [NonAction]
-        public List<Tags> CollectiontoTag(List<TagCollection> input)
-        {
-            var genres = new List<Tags>();
-            foreach (var genre in input)
-            {
-                genres.Add(genre.tag);
-            }
-            return genres;
-
-        }
-
-
-
-        [NonAction]
-        public Boolean GenreSimilar(Genre genre, Genre compare) {
-            var is_similar = false;
-
-            var genre_similar = new List<string>();
-            foreach (var value in genre.similar)
-            {   
-                genre_similar.Add((genre.Name == value.first_id) ? value.first_id : value.second_id);
-            }
-
-            if ( genre_similar.Contains(compare.Name))
-            {
-                return true;
-            }
-            return false;
-
-            }
-
-        [NonAction]
-        public Boolean ListGenreSimilar(List<Genre> author_genres, List<Genre> main_author_genres )
-        {
-          
-            var counter = 1;
-           
-          
-            foreach (var main_author_genre in main_author_genres)
-            {
-
-                foreach (var author_genre in author_genres)
-                {
-                    if (GenreSimilar(author_genre, main_author_genre))
-                    {
-                        if (counter == 1)
-                        {
-                            counter--;
-                        }
-                        else
-                        {
-                            return true;
-                        }
-
-                    }
-                   
-                }
-             
-            }
-   return false;
-        }
-
-        [NonAction]
-
-        public Boolean ListTagSimilar(List<Tags> author_genres, List<Tags> main_author_genres)
-        {
-
-            var counter = 1;
-
-
-            foreach (var main_author_genre in main_author_genres)
-            {
-
-                foreach (var author_genre in author_genres)
-                {
-                    if (TagSimilar(author_genre, main_author_genre))
-                    {
-                        if (counter == 1)
-                        {
-                            counter--;
-                        }
-                        else
-                        {
-                            return true;
-                        }
-
-                    }
-
-                }
-
-            }
-            return false;
-        }
-
-
-        [NonAction]
-        public Boolean TagSimilar(Tags tag, Tags compare)
-        {
-            var is_similar = false;
-
-            var genre_similar = new List<string>();
-            foreach (var value in tag.similar)
-            {
-                genre_similar.Add((tag.Name == value.first_id) ? value.first_id : value.second_id);
-            }
-
-            if (genre_similar.Contains(compare.Name))
-            {
-                return true;
-            }
-            return false;
-        }
-
-
-       
-
-        [NonAction]
-        public Boolean GenreCompare(List<Genre> input_genre, List<Genre> compare_genre, Boolean is_similar)
-        {
-            var is_genre_similar = ListGenreSimilar(input_genre, compare_genre );
-
-            if (input_genre.Intersect(compare_genre).Count() > 2| (is_similar && is_genre_similar))
-            {
-                return true;
-            }
-            else return false;
-        }
-
-        [NonAction]
-        public Boolean TagCompare(List<Tags> input_tag, List<Tags> compare_tag, Boolean is_similar )
-        {
-            var is_tag_similar = ListTagSimilar(input_tag, compare_tag); 
-
-            if (input_tag.Intersect(compare_tag).Count() > 2|(is_similar&& is_tag_similar))
-            {
-                return true;
-            } else return false;
-        }
-
-
-
-      
-
-        [NonAction]
-        public List<Tags> CollectionSongtoTag(ICollection<Song> song_list)
-        {
-            
-            var return_list = new List<Tags>();
-            foreach (var song in song_list){
-
-                return_list.Concat(SongtoTags(song));     
-            
-           
- }
- return return_list;
-
-        }
-
-        [NonAction]
-        public List<Tags> SongtoTags(Song song)
-        {
-            var for_return = new List<Tags>();
-foreach (var tags_list in song.tags)
-            { 
-               for_return.Add(tags_list.tag);
-            }
-return for_return;
-        }
-
-        [NonAction]
-        public List<Genre> SongtoGenres(Song song)
-        {
-            var for_return = new List<Genre>();
-            foreach (var tags_list in song.genres)
-            {
-                for_return.Add(tags_list.genre);
-            }
-            return for_return;
-        }
-
-
-
-        [NonAction]
-        public List<Genre> CollectionSongtoGenre(ICollection<Song> song_list)
-        {
-
-            var return_list = new List<Genre>();
-            foreach (var song in song_list)
-            {
-
-
-                return_list.Concat(SongtoGenres(song));
-            }
-            return return_list;
-
-        }
-
+ 
 
 
 
@@ -289,45 +84,8 @@ return for_return;
         public async Task<ActionResult> SimilarAuthors(Musician author, Boolean is_popular)
         {
 
-List<Genre> AuthorGenres(Musician author)
-        {
-            return CollectionSongtoGenre(author.Songs.OrderBy(a=> a.song_views.Count).Take(10).ToList());
-        }
 
-List<Tags> AuthorTags(Musician author)
-            {
-                return CollectionSongtoTag(author.Songs.OrderBy(a => a.song_views.Count).Take(10).ToList());
-            }
-           
-            Boolean Similar(Musician a)
-            {
-                return GenreCompare(AuthorGenres(a), AuthorGenres(author), true)&& TagCompare(AuthorTags(a), AuthorTags(author), true);
-            }
-
-            Boolean Not_Similar(Musician a)
-            {
-                return GenreCompare(AuthorGenres(a), AuthorGenres(author), true) && TagCompare(AuthorTags(a), AuthorTags(author), false);
-            }
-
-            List<Musician> authors = null;
-            List<Musician> similar_authors = null;
-            if (is_popular) {
-
-                authors = _context.musicians.Where(Not_Similar).OrderByDescending(a => a.liked_by.Count()).Take(5).ToList();
-                similar_authors = _context.musicians.Where(Similar).OrderByDescending(a => a.liked_by.Count()).Take(2).ToList();
-            } else {
-                authors = _context.musicians.Where(Not_Similar).OrderBy(a => a.liked_by.Count()).Take(5).ToList();
-                similar_authors = _context.musicians.Where(Similar).OrderBy(a => a.liked_by.Count()).Take(2).ToList();
-            }
-            var return_result = new List<Object>();
-            foreach (var Author in authors) {
-                return_result.Add(new { name = Author.Name, id = Author.Id, src = Author.img_filename, });
-            }
-            foreach (var Author in similar_authors)
-            {
-                return_result.Add(new { name = Author.Name, id = Author.Id, src = Author.img_filename, });
-            }
-            return Ok(return_result);
+            return Ok();
         } 
 
      
@@ -348,17 +106,24 @@ List<Tags> AuthorTags(Musician author)
         public int Randomizer()
         {
 
-            var rand = new Random();
-           int result = rand.Next(1, 100);
+           
+            return  _rnd.Next(1, 100);
 
-            return result;
+          
 
 
             
             
         }
 
-       
+
+        [NonAction]
+        public  int ChooseCompare(bool similar)
+        {
+            if (similar) return _cms.loose_compare;else return _cms.strict_compare;
+            
+        }
+
 
         [NonAction]
         public Boolean UserCompare(User user, Song song)
@@ -366,25 +131,128 @@ List<Tags> AuthorTags(Musician author)
             return !(user.radio.radio_stack.Contains(song.Id) && user.radio.radio_stack.Contains(song.Id));
         }
 
+        [NonAction]
+        public async Task<List<Song>> CompareFunction(int next_index, User user, Musician author)
+        {
+
+          
+
+            var musicians = _cms.GetSimilarAuthors(author,50);
+
+            var tags = _cms.MusicianTags(author);
+
+
+            bool MusicianCompareFunction(Song a, bool is_similar)
+            {
+
+                return musicians.Intersect(_ms.SongtoAuthors(a)).Any() ||_cms.GenreCompare(SongtoGenres(a),_cms.MusicianToGenre(author), is_similar, ChooseCompare(is_similar))
+                && _cms.TagCompare(SongtoTags(a), tags, is_similar, ChooseCompare(is_similar)) ;
+            }
+
+
+
+
+            return  CompareSongs(MusicianCompareFunction, next_index,5);
+        }
+        [NonAction]
+        public List<Tags> CollectionSongtoTag(ICollection<Song> song_list)
+        {
+
+            var return_list = new List<Tags>();
+            foreach (var song in song_list)
+            {
+
+                return_list.Concat(SongtoTags(song));
+
+
+            }
+            return_list = return_list.Distinct().ToList();
+            return return_list;
+
+        }
+
+        [NonAction]
+        public List<Tags> SongtoTags(Song song)
+        {
+            var for_return = new List<Tags>();
+            foreach (var tags_list in song.tags)
+            {
+                for_return.Add(tags_list.tag);
+            }
+            return for_return;
+        }
+
+        [Authorize]
+        [Route("author/popular_songs/{id}")]
+        public async Task<ActionResult> MusicianFamousSongs(Guid id)
+        {
+            var songs = _context.songs.Where(a => a.Main_Author.Id == id || a.extra_authors.Where(a => a.AuthorId == id).Any()).OrderBy(a => a.song_views.Count)
+                .ThenBy(a => a.liked_by.Count).Take(10).ToList();
+           
+            
+            return Ok(_cms.SongstoSongReturns(songs, await _userManager.GetUserAsync(HttpContext.User)));
+        }
+
+
+
+        [NonAction]
+        public List<Genre> SongtoGenres(Song song)
+        {
+            var for_return = new List<Genre>();
+            foreach (var tags_list in song.genres)
+            {
+                for_return.Add(tags_list.genre);
+            }
+            return for_return;
+        }
+
+        [Authorize(Roles = "User")]
+        [Route("music/liked/last/albumns/{pages_index}/{page_size}/")]
+        [HttpGet]
+        public async  Task<ActionResult> LikedLastAlbumns(int pages_index, int page_size )
+        {
+            var user = await _userManager.GetUserAsync(HttpContext.User);
+            var albumns = _context.albumns.Where(a=> a.albumn_views.Where(a=> a.UserId==user.Id).Any()).OrderBy().Take();
+
+        } 
+
+
+        [NonAction]
+        public List<Genre> CollectionSongtoGenre(ICollection<Song> song_list)
+        {
+
+            var return_list = new List<Genre>();
+            foreach (var song in song_list)
+            {
+
+
+                return_list.Concat(SongtoGenres(song));
+            }
+
+            return_list = return_list.Distinct().ToList();
+            return return_list;
+
+        }
 
         [NonAction]
         public async Task<List<Song>> CompareFunction(int next_index, User user, Albumn albumn )
         {
-            var rnd = new Random();
+            
 
-            var new_song = new List<Song>();
-
-
-            Guid id = albumn.Main_Author.Id;
-            new_song = _context.songs.Where(a => (a.Main_Author.Id == id && rnd.Next(1, 100) < 40 ||MusicianGenreCompare(a, albumn, true, false) || ParentTagCompare(a, albumn)) &&
-            UserCompare(user, a)).OrderBy(x => rnd.Next()).Take(next_index).ToList();
-            if (new_song.Count == 0) {
-                new_song = _context.songs.Where(a => (a.Main_Author.Id == id && rnd.Next(1, 100) < 40 || MusicianGenreCompare(a, albumn, true, false) || ParentTagCompare(a, albumn))).Take(next_index).ToList();
-
-               
-            } 
            
-         return new_song;
+            Guid id = albumn.Main_Author.Id;
+
+           
+
+            bool CompareFunction(Song a, bool is_similar) { 
+            return (a.Main_Author.Id == id && _rnd.Next(1, 100) < 40 || _cms.TagCompare(SongtoTags(a),
+            _cms.AlbumnToTag(a.Albumn), is_similar, ChooseCompare(is_similar) ) && _cms.GenreCompare(SongtoGenres(a), _cms.AlbumnToGenre(a.Albumn), is_similar, ChooseCompare(is_similar))) &&
+            UserCompare(user, a);
+            
+            }
+           
+           
+         return CompareSongs(CompareFunction, next_index, _rnd.Next(1,5));
         }
         [NonAction]
         public Boolean AuthorPossiibility(User user)
@@ -404,36 +272,139 @@ List<Tags> AuthorTags(Musician author)
             return false;
         }
 
-
         [NonAction]
-        public async Task<List<Song>> CompareFunction(int next_index, User user, Albumn albumn)
+        public List<Tags> UserTags(User user)
         {
             var rnd = new Random();
+             var tags = new List<Tags>();
 
+            DateTime MinTagDateTime(Tags a)
+            {
+               return a.song.Where(a=> a.song.song_views.Where(b=>b.UserId==user.Id).Any())
+                    .OrderBy(a => a.song.song_views.OrderBy(a => a.last_listened).First()).First().song.song_views
+                    .Where(a => a.song.song_views.Where(b => b.UserId == user.Id).Any()).First().last_listened;
+                
+            }
+
+
+            void GetUserTags()
+            {
+                tags = tags.Concat(_context.tags.Where(a => a.song.Where(b => _cms.SongListened(b.song, user) > 5)
+                .Any() && !tags.Contains(a)).Distinct().OrderBy(MinTagDateTime)
+                .ThenBy(a => a.song.Where(b => _cms.SongListened(b.song, user) > 5)
+                .ToList().Count).Take(25).ToList()).Concat(_context.tags.Where(a => a.song.Where(b => _cms.isSongLiked(b.song, user))
+                .Any() && !tags.Contains(a)).Distinct().OrderBy(MinTagDateTime)
+                .ThenBy(a => a.song.Where(b => _cms.SongListened(b.song, user) > 5).ToList().Count).Take(25).ToList()).Distinct().ToList();
+
+            }
+
+
+
+
+            while (tags.Count < 20)
+            {
+                GetUserTags();
+            }
+           
+            
+            return tags;
+        }
+
+
+        [NonAction]
+        public List<Song> MoreNextIndex( Func<Song, Boolean, Boolean> compare, int next, int similar, bool is_similar)
+        {
+            var songs = new List<Song>();
+
+            songs = NextIndex(a=> compare(a, is_similar),next-similar);
+
+            songs = NextIndex(a=> compare(a, is_similar), similar);
+
+            return songs;
+        }
+
+
+        [NonAction]
+        public List<Song> CompareSongs(Func<Song, bool, bool> compare,int next_index, int max_similar_index)
+        {
             var new_song = new List<Song>();
 
-            var tags = _context.tag_user.Where(a=> a.user_id==user.Id).OrderBy(x=> x.listened)
-                .ThenBy(a=> a.last_listened).Take(10).Select(a=> a.tag).ToList();
+            var similar_index = _rnd.Next(1, max_similar_index);
 
-            var genre = _context.genre_user.Where(a => a.user_id == user.Id ).OrderBy(x => x.listened)
-                .ThenBy(a => a.last_listened).Take(10).Select(a => a.genre).ToList();
+            if (next_index > similar_index)
+            {
+               new_song =  new_song.Concat(MoreNextIndex(compare, next_index, similar_index, false)).ToList();
 
-            var favorite_authors = _context.songsViews.Where(a => a.UserId==user.Id ).OrderBy(x => x.listened).ThenBy(a => a.last_listened).Take(10)
-                .Select(a=>a.song.Main_Author).ToList();
+            }
 
-
-            new_song = _context.songs.Where(a => ( favorite_authors.Contains(a.Main_Author)&&AuthorPossiibility(user)|| 
-            TagCompare(CollectionSongtoTag([a]),tags, true )|| GenreCompare(SongtoGenres(a), genre, false)) &&
-            UserCompare(user, a)).OrderBy(x => rnd.Next()).Take(next_index).ToList();
+            
             if (new_song.Count == 0)
             {
-                new_song = _context.songs.Where(a => (favorite_authors.Contains(a.Main_Author) && AuthorPossiibility(user) ||
-            TagCompare(Song, tags) || GenreCompare(SongtoGenres(a)), genre)) &&
-            UserCompare(user, a)).OrderBy(x => rnd.Next()).Take(next_index).ToList();
+                new_song = new_song.Concat(NextIndex(a=>compare(a, true), next_index)).ToList();  
 
 
             }
             return new_song;
+        }
+
+
+        [NonAction]
+        public List<Song> LessNextIndex(Func<Song,Boolean, Boolean> compare, int next)
+        {
+          
+           Boolean is_similar() {
+                var result = Randomizer();
+                if (result< 40) {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+
+
+            return NextIndex(a=> compare(a, is_similar()), next);
+        }
+
+        [NonAction]
+        public List<Song> NextIndex(Func<Song, Boolean> compare, int next)
+        {
+
+  return  _context.songs.Where(compare).OrderBy(x => Randomizer()).Take(next).ToList();
+        }
+
+
+
+        [NonAction]
+        public async Task<List<Song>> CompareFunction(int next_index, User user)
+        {
+
+           
+            
+            
+            
+            
+            var new_song = new List<Song>();
+
+            var tags = UserTags(user);
+            tags = tags.Distinct().ToList();
+            var genres = _context.genreUsers.Where(a=>a.user_id==user.Id).OrderBy(a=>a.listened).ThenBy(a=>a.last_listened).Select(a=> a.genre).ToList();
+
+            var favorite_authors = _context.musician_likes.Where(a => a.UsersId == user.Id).Select(a=> a.author.Id).ToList();
+
+           
+
+            Boolean FirstCompare(Song a, bool is_similar )
+            {
+               return (favorite_authors.Contains(a.Main_Author.Id) && AuthorPossiibility(user) ||
+                            _cms.TagCompare(CollectionSongtoTag([a]), tags, is_similar, ChooseCompare(is_similar) )|| _cms.GenreCompare(SongtoGenres(a), genres, false, ChooseCompare(is_similar))) &&
+                            UserCompare(user, a);
+            }
+
+
+
+            return CompareSongs(FirstCompare, next_index, _rnd.Next(1, 5));
         }
 
 
@@ -450,7 +421,7 @@ List<Tags> AuthorTags(Musician author)
 
 
                    
-                    var new_tag = await _context.tags.FindAsync(tag);
+                    var new_tag = _context.tags.Find(tag);
                     if (new_tag != null)
                     {
                        result_array.Add(new_tag);
@@ -460,7 +431,7 @@ List<Tags> AuthorTags(Musician author)
                 else
                 {
 
-                   var new_tag = await _context.genres.FindAsync(tag);
+                   var new_tag =  _context.genres.Find(tag);
                     if (new_tag != null)
                     {
                         result_array.Add(new_tag);
@@ -479,62 +450,53 @@ List<Tags> AuthorTags(Musician author)
 
         }
 
+
+      
+
+
+      
+
         [NonAction]
         public async Task<List<Song>>  CompareFunction(   int next_index, User user, List<string>? tag_list, List<string>? genre_list  )
         {
-                var rnd = new Random();
-
-                var new_song = new List<Song>();
-           
-                if (tag_list != null && genre_list !=null)
+          
+            var similar_index = _rnd.Next(1, 5);
+            
+            var tags_array = StringArrayToObjects(tag_list, true).ConvertAll(a => (Tags)a);
+            var genres_array = StringArrayToObjects(genre_list, false).ConvertAll(a => (Genre)a);
+            
+            Boolean SimilarCompare(Song a, bool is_similar)
             {
-                var tags_array =  StringArrayToObjects(tag_list, true).ConvertAll(a => (Tags)a);
-                var genres_array = StringArrayToObjects(genre_list, false).ConvertAll(a => (Genre)a);
-                
-                Boolean SimilarCompare(Song a, Boolean is_similar)
-                {
-                    return (TagCompare(SongtoTags(a), tags_array, is_similar) && GenreCompare(SongtoGenres(a), genres_array, is_similar)) &&
-                                    AuthorPossiibility(user);
+                return (_cms.TagCompare(SongtoTags(a), tags_array, is_similar, ChooseCompare(is_similar)) && _cms.GenreCompare(SongtoGenres(a), genres_array, is_similar, ChooseCompare(is_similar))) &&
+                                AuthorPossiibility(user);
 
-                }
-
-                 new_song = _context.songs.Where(a => ).OrderBy(x => rnd.Next()).Take(next_index).ToList();
-                if (next_index>= 2)
-                {
-                    new_song.Concat(_context.songs.Where(a => (TagCompare(SongtoTags(a), tags_array, true) && GenreCompare(SongtoGenres(a), genres_array, true)) &&
-                AuthorPossiibility(user)).OrderBy(x => rnd.Next()).Take(next_index).ToList()));
-                }
-
-               if(new_song.Count == 0)
-                {
-                    new_song = _context.songs.Where(a => (TagCompare(SongtoTags(a), tags_array, true)) &&
-                AuthorPossiibility(user)).OrderBy(x => rnd.Next()).Take(next_index).ToList();
-                }
             }
 
-            if(tag_list != null && genre_list == null)
+            Boolean TagOnlyCompare(Song a,  bool is_similar)
             {
-                var tags_array = await StringArrayToObjects(tag_list, true);
-                new_song = _context.songs.Where(a => (TagCompare(CollectionSongtoTag(a.tags), tags_array)) && AuthorPossiibility(user))
-                    .OrderBy(x => rnd.Next()).Take(next_index).ToList();
-                if (new_song.Count == 0)
-                {
-                    new_song = _context.songs.Where(a => (TagCompare(SongtoTags(a), tags_array, true)))
-                     .OrderBy(x => rnd.Next()).Take(next_index).ToList();
-                }
+                return _cms.TagCompare(SongtoTags(a), tags_array, is_similar, ChooseCompare(is_similar)) |
+            AuthorPossiibility(user);
+            }
+            bool GenreOnlyCompare(Song a, bool is_similar)
+            {
+                return _cms.GenreCompare(SongtoGenres(a), genres_array, is_similar, ChooseCompare(is_similar)) |
+           AuthorPossiibility(user);
+            }
+            if (tag_list != null && genre_list != null)
+            {
+
+              return   CompareSongs(SimilarCompare,next_index, 5);
+            }
+
+            if (tag_list != null && genre_list == null)
+            {
+                return CompareSongs(TagOnlyCompare, next_index, 5);  
             }
             else
             {
-                var genres_array = await StringArrayToObjects(genre_list, false);
-                new_song = _context.songs.Where(a => (TagCompare(CollectionSongtoTag(a), genres_array)) &&
-                 AuthorPossiibility(user)).OrderBy(x => rnd.Next()).Take(next_index).ToList();
-                if (new_song.Count == 0)
-                {
-                    new_song = _context.songs.Where(a => (TagCompare(CollectionSongtoTag(a), genres_array)))
-                        .OrderBy(x => rnd.Next()).Take(next_index).ToList();
-                }
+                return CompareSongs(GenreOnlyCompare, next_index, 5);
             }
-      return new_song;
+          
         }
 
 
@@ -565,33 +527,42 @@ List<Tags> AuthorTags(Musician author)
         { var user = await _userManager.GetUserAsync(HttpContext.User);
             var ms = new MusicService();
         var rnd = new Random();
-            Albumn albumn;
+            
             List<Song> songs = new List<Song>();
+            try { 
+            
             if(type == "albumn")
             {
-                albumn = await _context.albumns.FindAsync(new Guid(id));
+               var albumn = await _context.albumns.FindAsync(new Guid(id));
 
                 songs = await CompareFunction(next_index, user, albumn);
             }
-            else
-            {
-
-if (id==null) { 
-                
-                songs = await CompareFunction(next_index, user);
-                }
- var tags = new List<string>{id,id2,id3, id4 };
-
-if (type=="tag") {
-                    songs = await CompareFunction(next_index, user,tags, null);
+            else if(type == "author")
+                {
+                    var author = await _context.musicians.FindAsync(new Guid(id));
+                    songs = await CompareFunction(next_index, user, author);
                 }
                 else
                 {
-                    songs = await CompareFunction(next_index, user,null, tags );
+
+                    if (id == null)
+                    {
+
+                        songs = await CompareFunction(next_index, user);
+                    }
+                    var tags = new List<string> { id, id2, id3, id4 };
+
+                    if (type == "tag")
+                    {
+                        songs = await CompareFunction(next_index, user, tags, null);
+                    }
+                    else
+                    {
+                        songs = await CompareFunction(next_index, user, null, tags);
+                    }
+
+
                 }
-                
-                
-            }
 
 
             if (next_index==1)
@@ -602,9 +573,15 @@ if (type=="tag") {
             
             }
 
-            return Ok( ms.SongstoSongReturns(songs, user) ); 
+
+
+            return Ok( _cms.SongstoSongReturns(songs, user) ); 
      
-        
+        }
+            catch
+            {
+                return BadRequest();
+            }
         
         }
 

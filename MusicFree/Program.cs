@@ -1,3 +1,5 @@
+using GenHTTP.Adapters.AspNetCore;
+using GenHTTP.Modules.ServerSentEvents;
 using HotChocolate.Execution.Processing;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -8,7 +10,9 @@ using Microsoft.IdentityModel.Tokens;
 using MusicFree;
 using MusicFree.Graphql;
 using MusicFree.Models;
+using MusicFree.observables;
 using System.Text;
+using static Org.BouncyCastle.Asn1.Cmp.Challenge;
 
 var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 
@@ -65,6 +69,10 @@ builder.Services.AddAuthentication(options =>
 
 var app = builder.Build();
 
+var source = EventSource.Create()
+                        .Generator(GenerateStock)
+                        .Defaults();
+
 
 
 // Configure the HTTP request pipeline.
@@ -76,8 +84,7 @@ if (!app.Environment.IsDevelopment())
 }
 
 
-
-app.UseHttpsRedirection();
+    app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 

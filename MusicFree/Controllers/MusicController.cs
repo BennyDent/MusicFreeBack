@@ -19,6 +19,8 @@ using static System.Net.Mime.MediaTypeNames;
 using MusicFree.Models.AutenthicationModels;
 using MusicFree.Models.InputModels;
 using MusicFree.Models.ExtraModels;
+using MusicFree.Models.GenreAndName;
+using MusicFree.Models.DataReturnModel;
 namespace MusicFree.Controllers
 {
 
@@ -28,8 +30,12 @@ namespace MusicFree.Controllers
         private readonly FreeMusicContext _context;
         private readonly UserContext _userContext;
         private readonly UserManager<User> _userManager;
+        private readonly MusicService _ms;
+        private readonly ContextMusicService _cms;
         public MusicController(UserManager<User> userManager, FreeMusicContext context)
         {
+            _ms = new MusicService();
+            _cms = new ContextMusicService(userManager,_context, _userContext);
             _userManager = userManager;
             _context = context;
         }
@@ -44,7 +50,7 @@ namespace MusicFree.Controllers
         public async Task<ActionResult> UploadMusician(UploadMusicians m)
         {
 
-            Musician musician = new Musician(m.name);
+            Musician musician = new Musician(m.name, Guid.NewGuid().ToString());
             musician.liked_by = new List<MusicianUser>();
             if (musician.liked_by == null)
             {
@@ -53,7 +59,7 @@ namespace MusicFree.Controllers
             _context.musicians.Add(musician);
             await _context.SaveChangesAsync();
 
-            return Ok(new { src=musician.img_filename});
+            return Ok(new { src=musician.cover_src});
         }
         [Route("music/musician_img_upload")]
         [HttpPost]
@@ -64,6 +70,7 @@ namespace MusicFree.Controllers
            GridFsPlayer ms = new GridFsPlayer();
             string boundary = MultipartRequestHelper.GetBoundary(MediaTypeHeaderValue.Parse(Request.ContentType), 500);
             var multipartReader = new MultipartReader(boundary, context.Request.Body);
+           
             while (await multipartReader.ReadNextSectionAsync() is { } section)
             {
                 var section_name = MultipartRequestHelper.GetName(section.ContentDisposition);
@@ -71,6 +78,7 @@ namespace MusicFree.Controllers
                 image.Position = 0;
                 ms.UploadFile(section_name, image);
             }
+
 
             return Ok();
         }
@@ -97,18 +105,98 @@ namespace MusicFree.Controllers
             return new EmptyResult();
         }
 
+
+   
        
+
+        
+           
+       
+
+
+
+           
+
+
+
 
 
         [Route("music/create_albumn/")]
         [HttpPost("music/create_albumn/")]
         public async Task<ActionResult> CreateAlbumn(Albumn_Create albumn_input)
         {
-            Musician main_author = _context.musicians.Find(albumn_input.main_author);
+              Musician main_author = _context.musicians.Find(albumn_input.main_author);
             Console.WriteLine(main_author.Name);
             var extra_authors = new List<AlbumnAuthor>();
 
-            Albumn album = new Albumn(albumn_input.name, main_author);
+            Albumn album = new Albumn(albumn_input.name, main_author,albumn_input.albumn_type);
+           
+
+            IList<object> ReturnTagsCollection(List<string> id_list, bool is_genre, bool is_albumn, Song? song )
+            {
+                var result = new List<object>();
+                foreach (var id in id_list)
+                {
+                    GenreTagCollection new_genre = null; 
+                    if (is_genre)
+                    { var genre_find =  _context.genres.Find(id);
+                        if (genre_find == null) {
+                            throw new Exception();
+                        }
+                        else
+                        {
+
+
+                            if (is_albumn)
+                            {
+                                new_genre = new GenretoAlbumn(genre_find, album);
+                             album.genres.Add((GenretoAlbumn)new_genre);
+                            genre_find.albumns.Add((GenretoAlbumn)new_genre);
+                               
+                            }
+                            else {
+                              new_genre = new GenretoSong(genre_find, song!);
+                                song!.genres.Add((GenretoSong)new_genre);
+                                genre_find.song.Add((GenretoSong)new_genre);
+                               
+                            }
+
+                          
+                        }
+                    }
+                    else
+                    {
+                        var tag_find = _context.tags.Find(id);
+                        if (tag_find == null)
+                        {
+                            throw new Exception();
+                        }
+                        else
+                        {
+                            if (is_albumn)
+                            {
+                                new_genre = new TagtoAlbumn(tag_find, album);
+                                album.tags.Add((TagtoAlbumn)new_genre);
+                                tag_find.albumns.Add((TagtoAlbumn)new_genre);
+                            }
+                            else
+                            {
+                                new_genre = new TagtoSong(tag_find, song);
+                                song!.tags.Add((TagtoSong)new_genre);
+                                tag_find.song.Add((TagtoSong)new_genre);
+                            }
+                        
+                        }
+
+
+                        }
+                    result.Add(new_genre);
+                }
+                return result;
+
+            }
+
+          
 
             if (main_author.Albumns == null) {
                 main_author.Albumns = new List<Albumn>();
@@ -122,12 +210,25 @@ namespace MusicFree.Controllers
             catch (Exception ex) { Console.WriteLine(ex.Message);
 
             }
+
+            foreach (var item in albumn_input.extra_authors) 
+            {
+                var new_author = await _context.musicians.FindAsync(item);
+
+                var new_object = new AlbumnAuthor(album, new_author);
+                album.Extra_Authors.Add(new_object);
+                new_author.collaboration_albumns.Add(new_object);
+            }
+
+
+
+
             Console.WriteLine(2);
             foreach (var author_id in albumn_input.extra_authors)
 
             {
                 Musician extra_author = _context.musicians.Find(author_id);
-                AlbumnAuthor albumn_author = new AlbumnAuthor(album.Id, author_id, album, extra_author);
+                AlbumnAuthor albumn_author = new AlbumnAuthor( album, extra_author);
                 _context.albumn_authors.Add(albumn_author);
                 await _context.SaveChangesAsync();
                 extra_author.collaboration_albumns.Add(albumn_author);
@@ -135,16 +236,71 @@ namespace MusicFree.Controllers
 
             }
 
+            await _context.SaveChangesAsync();
+
             var filename_index = new List<Song_filename>();
             album.Extra_Authors = extra_authors;
+
+
+            album.genres = ReturnTagsCollection(albumn_input.genres, true, true, null).Cast<GenretoAlbumn>().ToList();
+
+            album.tags = ReturnTagsCollection(albumn_input.tags, false, true, null).Cast<TagtoAlbumn>().ToList();
+
+
+            await _context.SaveChangesAsync();
+
+            
+            foreach (var genre in albumn_input.tags)
+            {
+                var albumn_tag = await _context.tags.FindAsync(genre);
+                if (albumn_tag == null)
+                {
+                    return BadRequest();
+                }
+                else
+                {
+                    var albumn_to_tag = new TagtoAlbumn(albumn_tag, album);
+                    album.tags.Add(albumn_to_tag);
+                    albumn_tag.albumns.Add(albumn_to_tag);
+                }
+
+
+            }
+
+            await _context.SaveChangesAsync();
+
+
             foreach (var song in albumn_input.songs)
             {
 
                 Song new_song = new Song(song.name, main_author, album);
-               // new_song.extra_authors.Add(GetSongAuthors(song.extra_authors, new_song)); изменить так что бы не было присваивания
-                new_song.Albumn = album;
+                // new_song.extra_authors.Add(GetSongAuthors(song.extra_authors, new_song)); изменить так что бы не было присваивания
+
+                foreach (var item in song.extra_authors)
+                {
+                    var new_author = await _context.musicians.FindAsync(item);
+
+                    var new_object = new SongAuthor(new_song, new_author);
+                    new_song.extra_authors.Add(new_object);
+                    new_author.collaboration_songs.Add(new_object);
+                }
+
+                var genres_id = new List<string>();
+                var tags_id = new List<string>();  
+                if (albumn_input.songs.Count==1) {
+                    tags_id = albumn_input.tags;
+                    genres_id = albumn_input.genres;
+                    
+                } else {
+                    tags_id = song.tags;
+                    genres_id = song.genres;
+                }
+
+                new_song.genres = ReturnTagsCollection(genres_id, true, false, new_song).Cast<GenretoSong>().ToList();
+                new_song.tags = ReturnTagsCollection(tags_id, false, false, new_song).Cast<TagtoSong>().ToList();
+                    new_song.Albumn = album;
                 new_song.albumn_index = song.index;
-                new_song.cover_filename = album.cover_filename;
+                new_song.cover_src = album.cover_src;
                 _context.songs.Add(new_song);
                 if (main_author.Songs == null) {
                     main_author.Songs = new List<Song>();
@@ -157,48 +313,21 @@ namespace MusicFree.Controllers
                     await _context.SaveChangesAsync();
                 }
 
-
+                    
 
                 album.Songs.Add(new_song);
-                new_song.song_filename = Guid.NewGuid().ToString();
-                filename_index.Add(new Song_filename(new_song.song_filename, new_song.albumn_index.Value));
+                new_song.cover_src = Guid.NewGuid().ToString();
+                
             }
             Console.WriteLine(3);
             _context.albumns.Add(album);
             await _context.SaveChangesAsync();
 
-            filename_index.Add(new Song_filename(album.cover_filename, -1));
+            filename_index.Add(new Song_filename(album.cover_src, -1));
             return Ok(filename_index);
         }
         //перенести их в сервисы
-        [NonAction]
-        public List<SongAuthor> GetSongAuthors(List<Guid> authors_id, Song song)
-        {
-            var authors = new List<SongAuthor>();
-            foreach (var author_id in authors_id)
-            {
-                Musician extra_author = _context.musicians.Find(author_id);
-                SongAuthor song_author = new SongAuthor(song.Id, author_id, song, extra_author);
-                _context.song_authors.Add(song_author);
-                _context.SaveChangesAsync();
-                authors.Add(song_author);
-            }
-            return authors;
-        }
-        [NonAction]
-        public List<AlbumnAuthor> GetAlbumnAuthors(List<Guid> authors_id, Albumn albumn)
-        {
-            var authors = new List<AlbumnAuthor>();
-            foreach (var author_id in authors_id)
-            {
-                Musician extra_author = _context.musicians.Find(author_id);
-                AlbumnAuthor song_author = new AlbumnAuthor(albumn.Id, author_id, albumn, extra_author);
-                _context.albumn_authors.Add(song_author);
-                _context.SaveChangesAsync();
-                authors.Add(song_author);
-            }
-            return authors;
-        }
+       
         [Route("music/upload_albumn/")]
         [HttpPost]
         public async Task<ActionResult> UploadAlbumns()
@@ -220,7 +349,7 @@ namespace MusicFree.Controllers
             return Ok();
         }
 
-
+        [Authorize(Roles = "Guest, User")]
         [Route("music/song_listened/{song_id}")]
         [Authorize]
         [HttpPost("music/song_listened/{song_id}")]
@@ -273,9 +402,14 @@ namespace MusicFree.Controllers
             return Ok();
         }
 
+        [NonAction]
+        public bool isUser(Song song, User user)
+        {
+          return _context.likes.Where(a => a.SongId == song.Id && a.UserId == user.Id).Any();
+        }
 
+        [Authorize(Roles ="Guest, User") ]
         [Route("last/songs/{page_size}")]
-        [Authorize]
         public async Task<ActionResult> LastSongs(int page_size)
         {
 
@@ -286,40 +420,64 @@ namespace MusicFree.Controllers
             var songviews = _context.songsViews.Where(a => a.UserId == user.Id).Take(10).ToList();
             var result = new List<SongReturn>();
             foreach (var songview in songviews) {
-                var song = songview.song;
-                result.Add(ms.SongToSongReturn(song, user));
+                
+                result.Add(new SongReturn(songview.song, isUser(songview.song, user)));
             }
             return Ok(result);
         }
 
+        [Authorize]
         [Route("last/search")]
         [HttpGet]
         public async Task<ActionResult> LastSearch()
-        { var ms = new MusicService();
-            var list = new List<Object>();
-            var user = await _userManager.GetUserAsync(HttpContext.User);
-            if (user==null) {
-                return Unauthorized();
-            }
-            var result = user.last_search.Take(5);
-            foreach (var part in result)
-            {
-                var search = await _context.searches.FindAsync(part);
+        {
+            
 
-                if (search.is_albumn)
+
+            var user = await _userManager.GetUserAsync(HttpContext.User);
+
+           bool isSame( LastSearchParent a)
+            {
+                return a.UserId == user.Id;
+            }
+
+            DateTime LastSearchOrder(LastSearchParent a)
+            {
+                return a.last_searched;
+            }
+
+            
+           ReturnParent SelectReturn(LastSearchParent a)
+            {
+                if(a.GetType() == typeof(SongLastSearch))
                 {
-                    list.Add(new { type = "albumn", result = ms.AlbumnReturn(search.Albumn) });
+                    var b = (SongLastSearch)a;
+                    return new SongReturn(b.Song, isUser(b.Song, user));
+                }
+                else if (a.GetType() == typeof(AlbumnLastSearch))
+                {
+                    var b = (AlbumnLastSearch)a;
+                    return new AlbumnReturn(b.Albumn);
                 }
                 else
                 {
-                    list.Add(new { type = "author", result = new AuthorReturn(search.Author.Id, search.Author.Name) });
+                    var b = (MusicianLastSearch)a;
+                    return new AuthorReturn(b.Author);
                 }
-
-
-
+                
             }
 
-            return Ok(list);
+            var musicians = _context.musicianlastSearches.Where(isSame).OrderBy(LastSearchOrder).Take(5)
+             .Select(a=> new AuthorSearchReturn(a.last_searched,new AuthorReturn(a.Author))).ToList();
+            var songs = _context.songlastSearches.Where(isSame).OrderBy(LastSearchOrder).Take(5)
+                .Select(a=> new SongSearchReturn(a.last_searched, new SongReturn(a.Song,isUser(a.Song, user)))).ToList();
+            var albumn = _context.albumnlastSearches.Where(isSame).OrderBy(LastSearchOrder).Take(5).Select(a => new AlbumnReturn(a.Albumn)).ToList();
+
+            var result = new List<LastSearchParent>();
+
+            result = result.Concat(musicians).Concat(songs).Concat(albumn).OrderBy(a=> a.last_searched).ToList();
+
+            return Ok();
         }
         [Authorize]
         [Route("search/add_last/")]
@@ -370,26 +528,14 @@ namespace MusicFree.Controllers
             var ms = new MusicService();
             var for_return = new List<SongReturn>();
             foreach (var song in songs) {
-                for_return.Add(ms.SongToSongReturn(song, user));
+
+                
+                for_return.Add(new SongReturn(song, isUser(song, user)));
             }
             return Ok(for_return);
         }
-        [Route("author/albumns/{Id}")]
-        [HttpGet]
-        public async Task<ActionResult> AlbumnMostPopularSongs(Guid Id)
-        {
-            var ms = new MusicService(); ;
 
-            var albumns = _context.musicians.Find(Id).Albumns.OrderByDescending(a => ms.AlbumnViews(a)).Take(5);
-            var for_return = new List<AlbumnRethurn>();
-            foreach (var song in albumns)
-            {
-                for_return.Add(ms.AlbumnReturn(song));
-            }
-
-            return Ok(for_return);
-        }
-
+        
         [Route("author/subcriptions_count/{id}")]
         [HttpGet]
         public async Task<ActionResult> AuthorsSubcriptions(Guid Id)

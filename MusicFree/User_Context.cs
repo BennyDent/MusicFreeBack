@@ -14,7 +14,7 @@ namespace MusicFree
 
             base.OnModelCreating(modelBuilder);
 
-
+            modelBuilder.Entity<User>().HasOne(a => a.radio).WithOne(a => a.user).HasForeignKey<UserRadio>(a=> a.user_id);
           
         }
         public UserContext(DbContextOptions<UserContext> options)

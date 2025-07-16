@@ -4,6 +4,7 @@ using MongoDB.Driver.GridFS;
 using Microsoft.AspNetCore.Mvc;
 using SQLitePCL;
 using Microsoft.AspNetCore.Identity;
+using MusicFree.Models.DataReturnModel;
 namespace MusicFree.Services { 
 
 public class MusicService
@@ -25,47 +26,16 @@ public class MusicService
             var authors_list = new List<AuthorReturn>();
             foreach (var author in list)
             {
-                authors_list.Add(new AuthorReturn(author.AuthorId, author.Author.Name));
+                authors_list.Add(new AuthorReturn(author.Author));
             }
             return authors_list;
         }
 
-        public AlbumnRethurn AlbumnReturn(Albumn albumn)
-        {
-           var for_return= new AlbumnRethurn(albumn.Id, albumn.Name, new AuthorReturn(albumn.Main_Author.Id, albumn.Main_Author.Name), ExtraAuthorsAlbumnReturn(albumn.Extra_Authors),albumn.cover_filename);
-          
-            return for_return;
-        }
-
-        public SongReturn SongToSongReturn(Song song, User user) {
-            var is_liked = false;
-            Console.WriteLine(user == null);
-            if (user != null) {
-            if (user.song_likes.Where(a=> a==song.Id).Any())
-            {
-                    Console.WriteLine(66);
-                is_liked=true;
-                    Console.WriteLine(is_liked);
-                } }
-            Console.WriteLine(is_liked);
-
-            return new SongReturn(song.Id, new AuthorReturn(song.Main_Author.Id, song.Main_Author.Name), ExtraAuthorsReturn(song.extra_authors),
-                    song.song_filename, song.Name, is_liked
-                    );
         
-        }
 
+       
 
-        public List<SongReturn> SongstoSongReturns(List<Song> songs, User user) { 
         
-        var songs_return = new List<SongReturn>();
-
-            foreach (Song song in songs)
-            {
-            songs_return.Add(SongToSongReturn(song, user)); 
-            }
-            return songs_return;
-        }
 
 
         public int AlbumnViews(Albumn a)
@@ -80,32 +50,35 @@ public class MusicService
 
         }
 
-        public List<AuthorReturn> ExtraAuthorsAlbumnReturn(ICollection<AlbumnAuthor> list)
+        public List<AuthorReturn> MusicianstoAuthorReturn(List<Musician> authors)
         {
-            var authors_list = new List<AuthorReturn>();
-            if(list.Count == 0)
+            var new_author = new List<AuthorReturn>();
+            foreach (var author in authors)
             {
-                return authors_list;
+                new_author.Add(new AuthorReturn(author));
             }
-            foreach (var author in list)
+            return new_author;
+        }
+        
+
+        public List<Musician> SongtoAuthors(Song a)
+        {
+            var new_authors = new List<Musician> { a.Main_Author };
+            if (a.extra_authors != null)
             {
-                authors_list.Add(new AuthorReturn(author.AuthorId, author.Author.Name));
+                foreach (var musician in a.extra_authors)
+                {
+                    new_authors.Add(musician.Author);
+
+                }
+
             }
-            return authors_list;
+            return new_authors;
+
         }
 
-        public List<AuthorReturn> MusicianToAuthorReturn(List<Musician> author)
-        {
-            var musician_list = new List<AuthorReturn>();
-            foreach(var m in author)
-            {
- var musician = new AuthorReturn(m.Id, m.Name);
-            musician.src = m.img_filename;
-                musician_list.Add(musician);    
-            }
-           
 
-            return musician_list ;
-        }
+
+      
     }  
 }

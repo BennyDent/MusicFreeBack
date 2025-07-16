@@ -1,6 +1,6 @@
 ﻿namespace MusicFree.Models.GenreAndName
 {
-    public class GenreTag
+    public class GenreTagCollection
     {
     }
 }

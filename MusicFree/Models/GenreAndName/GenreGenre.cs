@@ -1,21 +1,19 @@
-﻿namespace MusicFree.Models.GenreAndName
+﻿using System.ComponentModel.DataAnnotations;
+namespace MusicFree.Models.GenreAndName
 {
     public class GenreGenre
     {
-        public Genre first { get; set; }
-        public Genre second { get; set; }
-        public string first_id { get; set; }
-        public string second_id { get; set; }
+        public Guid Id { get; set; }
+        public ICollection<Genre> genres;
 
         public GenreGenre() { }
 
         public GenreGenre(Genre First, Genre Second)
         {
-
-            first = First;
-            second = Second;
-            first_id = First.Name;
-            second_id = First.Name;
+          Id = Guid.NewGuid();
+          genres = new List<Genre>();
+          genres.Add(First);
+        genres.Add(Second);
         }
 
     }

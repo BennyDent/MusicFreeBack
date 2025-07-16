@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 namespace MusicFree.Models.GenreAndName
 {
-    public class TagCollection
+    public class TagCollection: GenreTagCollection
     {
         [Key]
         public Guid Id { get; set; }
@@ -10,16 +10,6 @@ namespace MusicFree.Models.GenreAndName
 
         public string tag_id { get; set; }
         public TagCollection() { }
-        public TagCollection(Tags Tag)
-        {
-            this.Id = Guid.NewGuid();
-
-            tag = Tag;
-            tag_id = Tag.Name;
-
-
-           
-
-        }
+        
     }
 }

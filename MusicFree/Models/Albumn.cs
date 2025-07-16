@@ -1,10 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MusicFree.Models.GenreAndName;
+using MusicFree.Models.ExtraModels;
 using System.ComponentModel.DataAnnotations;
 
 namespace MusicFree.Models
 {
-    public class Albumn
+    public class Albumn: MainParent
     {
         [Key]
         public Guid Id { get; set; }
@@ -20,9 +21,12 @@ namespace MusicFree.Models
         public ICollection<AlbumnAuthor>  Extra_Authors { get; set; }
         public ICollection<Song> Songs { get; set; }
         public Boolean is_visible { get; set; }
-        public string cover_filename { get; set; }
-        
-    
+        public string cover_src { get; set; }
+        public ICollection<UserAlbumn> liked_by { get; set; }
+
+        public AlbumnType albumn_type { get; set; } 
+
+        public ICollection<AlbumnLastSearch> lastSearch { get; set; }
 
         public ICollection<AlbumnViews> albumn_views { get; set; }
 
@@ -31,16 +35,18 @@ namespace MusicFree.Models
          albumn_views = new List<AlbumnViews>();
             Extra_Authors = new List<AlbumnAuthor>();
         }
-        public Albumn( string name, Musician main_author)
+        public Albumn( string name, Musician main_author, AlbumnType ALbumnType)
         {
-            
+            lastSearch = new List<AlbumnLastSearch>();
+            albumn_type = ALbumnType;
+            liked_by = new List<UserAlbumn>();
             albumn_views = new List<AlbumnViews>();
             Id = Guid.NewGuid();
             Name = name;
             Main_Author = main_author;
             Extra_Authors = new List<AlbumnAuthor>();
             Songs = new List<Song>();
-            cover_filename = Guid.NewGuid().ToString();
+            cover_src = Guid.NewGuid().ToString();
         }
     }
 }

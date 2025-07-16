@@ -4,6 +4,6 @@
     {
         public string name {  get; set; }
         public Boolean is_tag { get; set; } 
-      public List<string> similar {  get; set; }
+      public List<Guid> similar {  get; set; }
     }
 }

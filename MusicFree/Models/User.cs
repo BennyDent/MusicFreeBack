@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Security.Claims;
 namespace MusicFree.Models
@@ -18,6 +19,8 @@ namespace MusicFree.Models
 
         public IList<Guid> playlists { get; } = new List<Guid>();
 
+      
+
         public UserRadio radio { get; set; }
 
         public string confirm_code { get; set; }
@@ -29,7 +32,7 @@ namespace MusicFree.Models
             albumn_views = new List<Guid>();
             
         }
-      public User(string email, string username, string Confirm_code)
+      public User( string username, string? Confirm_code, string? email)
         { 
              
             song_likes = new List<Guid>();  

@@ -1,6 +1,6 @@
 ﻿namespace MusicFree.Models.GenreAndName
 {
-    public class GenretoAlbumn: GenreCollection
+    public class GenretoAlbumn : GenreCollection
     {
         public Albumn albumn { get; set; }
 
@@ -8,10 +8,13 @@
 
         public GenretoAlbumn() { }
 
-        public GenretoAlbumn(Tag tag, Albumn Albumn)
+        public GenretoAlbumn(Genre tag, Albumn Albumn)
         {
             albumn = Albumn;
             albumn_id = Albumn.Id;
-
+            genre = tag;
+            genre_id = tag.Name;
+            Id = Guid.NewGuid();
         }
     }
+}

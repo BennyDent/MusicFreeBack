@@ -17,6 +17,8 @@ namespace MusicFree.Models
         
         public int listened { get; set; }
         public DateTime last_listened { get; set; }
+
+        public DateTime last_searched { get; set; }
         public SongViews() { }
         public SongViews( string userId, Guid songId, Song song)
         {
@@ -24,8 +26,9 @@ namespace MusicFree.Models
             Id = Guid.NewGuid();
             UserId = userId;
             SongId = songId;
-            listened = 0;
+            listened = 1;
             this.song = song;
+            last_searched = DateTime.Now;   
         }
       
 

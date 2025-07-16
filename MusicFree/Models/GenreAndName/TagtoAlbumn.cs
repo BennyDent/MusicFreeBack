@@ -11,6 +11,9 @@
             
             albumn = Albumn;
             albumn_id = Albumn.Id;
+            tag = Tag;
+            tag_id = Tag.Name;
+            Id = Guid.NewGuid();
         
         }
        

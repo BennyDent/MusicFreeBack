@@ -8,7 +8,7 @@ namespace MusicFree.Models.GenreAndName
         public ICollection<GenretoAlbumn> albumns { get; set; }
         public ICollection<GenretoSong> song { get; set; }
         public ICollection<GenreUser> users { get; set; }
-
+        public ICollection<GenretoMusician> authors { get; set; }
         public ICollection<GenreGenre> similar { get; set; }
         public Genre(string name)
         {   similar = new List<GenreGenre>();
@@ -16,6 +16,7 @@ namespace MusicFree.Models.GenreAndName
             albumns = new List<GenretoAlbumn>();
             song = new List<GenretoSong>();
             users = new List<GenreUser>();
+            authors = new List<GenretoMusician>();
         }
     }
 }

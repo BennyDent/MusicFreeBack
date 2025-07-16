@@ -24,20 +24,38 @@ namespace MusicFree.Controllers
         [HttpPost("/genre_tag/create")]
         public async Task<IActionResult> CreateGenreorTag(GenreTagInput Input)
         {
-            var new_genre_tag = new Models.GenreAndName.GenreAndName(Input.name, false);
-            var similars = new List<Models.GenreAndName.GenreAndName>();
-            foreach(var tag in Input.similar)
+
+            if (Input.is_tag)
             {
-                Models.GenreAndName.GenreAndName new_genre;
-                if (Input.is_tag)
-                {
-                    new_genre = _context.tags.Find(tag);
-                }else { new_genre = _context.genres.Find(tag); }
-        if(new_genre== null)
-                {
-                    return BadRequest();
+                var tag = new Tags(Input.name);
+                foreach(var similar_id in Input.similar)
+                { var similar_tag = await _context.tags.FindAsync(similar_id);
+                    if (similar_tag == null) {
+                        return BadRequest();
+                    }
+                    var new_tags = new TagTag(similar_tag, tag);
+                    tag.similar.Add(new_tags);
+                    _context.similar_tag.Add(new_tags);
                 }
-        similars.Add(new_genre);       
+                _context.tags.Add(tag);
+                await _context.SaveChangesAsync();
+            }
+            else
+            {
+                var genre = new Genre(Input.name);
+                foreach (var similar_id in Input.similar)
+                {
+                    var similar_tag = await _context.genres.FindAsync(similar_id);
+                    if (similar_tag == null)
+                    {
+                        return BadRequest();
+                    }
+                    var new_tags = new GenreGenre(similar_tag, genre);
+                    genre.similar.Add(new_tags);
+                    _context.similar_genre.Add(new_tags);
+                }
+                _context.genres.Add(genre);
+                await _context.SaveChangesAsync();
             }
             return Ok();
         }
@@ -45,34 +63,7 @@ namespace MusicFree.Controllers
         
 
 
-        [Route("")]
-        [HttpGet("/genre_tag/find/{is_tag}/{name}/{page_index}")]
-        public async Task<IActionResult> GetGenreorTag(string name, string is_tag, int page_index)
-        {
-            var page_size = 5;
-            var hasMore = true;
-            var result=  new List<Models.GenreAndName.GenreAndName>();
-            var results_array = new List<NameIdReturnData>();
-            if (is_tag=="tags")
-            {
-                result = _context.tags.Where(a => a.Name==name).OrderBy(a=>a.songs.Count()).Take(page_size*page_index).Cast<Tag>().ToList();
-            }
-            else
-            {
-                result = _context.tags.Where(a => a.Name == name).OrderBy(a => a.songs.Count()).Take(page_size * page_index).Cast<Tag>().ToList();
-            }
-
-            if (result.Count<=5) { 
-            hasMore = false;    
-            }
-
-            foreach (var item in result) {
-            results_array.Add(new NameIdReturnData(item.Name));    
-            }
-                
-
-            return Ok(new {hasMore=hasMore,});
-        }
+       
 
         
     }

@@ -13,11 +13,11 @@ namespace MusicFree.Models
        
         public MusicianUser()
         { }
-        public MusicianUser(string song_id, Guid author_id, Musician song)
+        public MusicianUser(string song_id,  Musician song)
         {
             Id= Guid.NewGuid();
             UsersId = song_id;
-            AuthorId = author_id;
+            AuthorId = song.Id;
             author = song;
           
         }

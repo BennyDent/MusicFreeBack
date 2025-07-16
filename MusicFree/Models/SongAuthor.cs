@@ -12,10 +12,10 @@ namespace MusicFree.Models
         public Musician Author { get; set; }
         public SongAuthor()
         { }
-        public SongAuthor(Guid song_id, Guid author_id, Song song, Musician author) {
+        public SongAuthor(  Song song, Musician author) {
             Id = Guid.NewGuid();
-            SongId = song_id;  
-        AuthorId = author_id;
+            SongId = song.Id;  
+        AuthorId = author.Id;
         Song = song;
         Author = author;
         }

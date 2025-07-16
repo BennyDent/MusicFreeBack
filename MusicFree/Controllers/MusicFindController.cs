@@ -25,10 +25,13 @@ namespace MusicFree.Controllers
     {
         private readonly UserManager<User> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
-
+        private MusicService _ms;
+       
         private readonly FreeMusicContext _context;
+        private readonly UserContext _userContext;
         public MusicFindController(FreeMusicContext context, UserManager<User> userManager)
         {
+            _ms = new MusicService();
             _userManager = userManager;
             _context = context;
         }
@@ -58,7 +61,7 @@ namespace MusicFree.Controllers
             {
                 nextPage = _context.musicians.Where(a => a.Name.Contains(name) & a.liked_by.Count() < views_amount).OrderByDescending(a => a.liked_by.Count()).Take(10).ToList();
             }
-            var result = ms.MusicianToAuthorReturn(nextPage);
+            var result = _ms.MusicianstoAuthorReturn(nextPage);
             if (nextPage.Count() == 0)
             {
                 return Ok();
@@ -125,7 +128,7 @@ namespace MusicFree.Controllers
 
             foreach(var page in nextPage)
             {
-                array.Add(ms.AlbumnReturn(page) );
+                array.Add(new AlbumnRethurn(page));
             }
 
             return Ok(new {Coursor= newCursor, search=array });
@@ -235,7 +238,7 @@ result_array.Add(new_song);
           var ms = new MusicService();
           foreach (var song in author.Songs.OrderByDescending(a=>a.song_views.Count()).Take(10).ToList())
           {
-              for_return.Add(ms.SongToSongReturn(song, user));
+              for_return.Add(new SongReturn(song,));
           }
           return Ok(for_return);
       }
@@ -246,7 +249,7 @@ result_array.Add(new_song);
           var for_return = new List<AuthorReturn>();
             var hasMore = true;
             foreach (var author in _context.musicians.Where(a => a.Name.Contains(name)).OrderBy(a=>a.Songs.Count).Take(page_index*5).ToList()) {
-              for_return.Add(new AuthorReturn(author.Id, author.Name));
+              for_return.Add(new AuthorReturn(author));
           }
 
             if (for_return.Count <= 5) {

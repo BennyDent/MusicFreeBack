@@ -1,8 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace MusicFree.Models.UserAlbumn
+namespace MusicFree.Models
 {
-    public class UserAlbumn{
+    public class UserAlbumn
+    {
         [Key]
         public Guid Id { get; set; }
         public Guid AlbumnId { get; set; }
@@ -10,7 +11,7 @@ namespace MusicFree.Models.UserAlbumn
         public Albumn Albumn { get; set; }
         public UserAlbumn()
         { }
-        public UserAlbumn( string author_id, Albumn albumn)
+        public UserAlbumn(string author_id, Albumn albumn)
         {
             Id = Guid.NewGuid();
             AlbumnId = albumn.Id;
