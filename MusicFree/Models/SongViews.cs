@@ -3,32 +3,31 @@ using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Identity;
 namespace MusicFree.Models
 {
-    public class SongViews
+    public class SongViews:ViewClass
     {
         [Key]
         public Guid Id { get; set; }
         public string UserId { get; set; }
         public Guid SongId { get; set; }
 
-  
+        public User user { get; set; }
     
         public Song song { get; set; }
 
         
-        public int listened { get; set; }
-        public DateTime last_listened { get; set; }
-
-        public DateTime last_searched { get; set; }
+     
+     
         public SongViews() { }
-        public SongViews( string userId, Guid songId, Song song)
+        public SongViews( User User, Song Song):base()
         {
             last_listened = DateTime.Now;
             Id = Guid.NewGuid();
-            UserId = userId;
-            SongId = songId;
+            UserId = User.Id;
+            user = User;
+            SongId = Song.Id;
             listened = 1;
-            this.song = song;
-            last_searched = DateTime.Now;   
+            this.song = Song;
+            
         }
       
 

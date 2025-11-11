@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace MusicFree.Models
 {
-    public class Albumn: MainParent
+    public class Albumn: AutoIncrementedParent
     {
         [Key]
         public Guid Id { get; set; }
@@ -30,13 +30,22 @@ namespace MusicFree.Models
 
         public ICollection<AlbumnViews> albumn_views { get; set; }
 
+        public DateTime release_date { get; set; }
+
+
         public Albumn() {
+            genres = new List<GenretoAlbumn>();
+            tags = new List<TagtoAlbumn>();
         Songs = new List<Song>();
          albumn_views = new List<AlbumnViews>();
+            liked_by = new List<UserAlbumn>();
             Extra_Authors = new List<AlbumnAuthor>();
         }
-        public Albumn( string name, Musician main_author, AlbumnType ALbumnType)
+        public Albumn( string name, Musician main_author, AlbumnType ALbumnType, DateTime Date)
         {
+            genres = new List<GenretoAlbumn>();
+            tags = new List<TagtoAlbumn>();
+            release_date = Date;
             lastSearch = new List<AlbumnLastSearch>();
             albumn_type = ALbumnType;
             liked_by = new List<UserAlbumn>();

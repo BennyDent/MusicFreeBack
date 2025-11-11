@@ -1,4 +1,5 @@
 ﻿
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Identity.Client;
@@ -7,19 +8,29 @@ using MusicFree.Models.DataReturnModel;
 using MusicFree.Models.ExtraModels;
 using MusicFree.Models.GenreAndName;
 using System.Data.Entity.ModelConfiguration.Conventions;
+using System.Security.Claims;
 
 namespace MusicFree.Services
 {
+
+    public interface IContextMusicService {
+
+        public Task<User> ReturnUserModel();
+
+
+    }
+
+
     public class ContextMusicService
     {
-        private readonly UserContext _user_context;
+        
         private readonly FreeMusicContext _context;
-        private readonly UserManager<User> _userManager;
+        private readonly UserManager<IdentityUser> _userManager;
         public readonly int strict_compare;
         public readonly int loose_compare;
-        public ContextMusicService(UserManager<User> userManager, FreeMusicContext context, UserContext usercontext)
+        public ContextMusicService(UserManager<IdentityUser> userManager, FreeMusicContext context)
         {
-            _user_context = usercontext;
+          
             _userManager = userManager;
             _context = context;
             strict_compare = 5;
@@ -27,6 +38,36 @@ namespace MusicFree.Services
         }
 
 
+
+
+
+
+    
+        public async Task<User> ReturnUserModel(ClaimsPrincipal user_claims) {
+
+       
+            var  user= await _userManager.GetUserAsync(user_claims);
+            
+            
+            if(user == null)
+            {
+                if (user_claims.FindFirst("sub")==null)
+                {
+                    return null;
+                }
+                return await _context.user.FindAsync(user_claims.FindFirst("sub").Value);
+
+
+            }
+    
+
+
+
+            return  await _context.user.FindAsync(user.Id);
+
+
+
+        }
         
 
         public Boolean GenreSimilar(Genre genre, Genre compare)
@@ -165,20 +206,7 @@ namespace MusicFree.Services
         }
 
 
-        public List<SongReturn> SongstoSongReturns(List<Song> songs, User user)
-        {
-
-           
-
-            var songs_return = new List<SongReturn>();
-
-            foreach (Song song in songs)
-            {
-                songs_return.Add(new SongReturn(song,(user!=null)? isSongLiked(song, user): null ));
-            }
-            return songs_return;
-        }
-
+       
 
         public List<Tags> MusicianTags(Musician author)
         {
@@ -265,7 +293,7 @@ public List<Genre> AlbumnToGenre(Albumn a)
 
         int SongListenedbyOthersUsers(Musician a) {
 
-               return a.listened_by.Where(a => author.listened_by.Where(b => b.UserId == a.UserId).Any()).ToList().Count();
+               return a.musician_views.Where(a => author.musician_views.Where(b => b.UserId == a.UserId).Any()).ToList().Count();
 
 
             
@@ -339,103 +367,64 @@ public List<Genre> AlbumnToGenre(Albumn a)
         }
 
 
-        public Boolean isSongListened(Song song, User user)
+      
+
+        public AlbumnViews  AlbumnView(Albumn a, User user) {
+        
+            if(user == null) {
+
+                return null;
+            
+            }
+
+            var array = _context.albumn_views.Where(b => b.UserId == user.Id && b.Id == b.Id).First();
+
+            return array;
+        
+        }
+
+
+
+
+        public List<SongReturn> SongstoSongReturns(List<Song> songs, User user)
         {
-            if (user.song_views.Contains(song.Id) && song.song_views.Where(a => a.UserId == user.Id).Any())
-            {
-                return true;
-            }
-            else
-            {
-                if (user.song_views.Contains(song.Id))
-                {
-                    _context.songsViews.Add(new SongViews(user.Id, song.Id, song));
-                     _context.SaveChanges();
-                    return true;
-                    
-                   
-                }
-                if (song.song_views.Where(a => a.UserId == user.Id).Any())
-                {
-                    user.song_views.Add(song.Id);
-                   _userManager.UpdateAsync(user);
 
-                    return true;
-                }
-                return false;
+
+
+            var songs_return = new List<SongReturn>();
+
+            foreach (Song song in songs)
+            {
+                songs_return.Add(SongtoSongReturn(song,user));
             }
-          
+            return songs_return;
         }
 
 
 
 
-        public DateTime SongLastListened(Song song, User user) {
-
-            if (SongView(song, user) == null)
-            {
-                throw new Exception();
-            }
-            else
-            {
-
-                return SongView(song, user).last_listened;
-            }
-
+        public SongReturn SongtoSongReturn(Song song, User user ) {
+            Console.WriteLine("nameless");
+            Console.WriteLine(song.Main_Author == null);
+            return new SongReturn(song, (user != null) ? isSongLiked(song, user) : null);
         }
 
 
- public int SongListened(Song song, User user)
-        {
-            if (SongView(song, user) == null)
-            {
-                return 0;
-            }
-            else
-            {
-                return SongView(song, user).listened;
-            }
-        }
-
-
-
-
-
-
-
-        private SongViews? SongView(Song song, User user)
-        {
-            try { 
-            return song.song_views.Where(a => a.UserId == user.Id).First();
-            }
-            catch {  return null; } 
-        }
 
         public Boolean isSongLiked(Song song, User user)
         {
-            if (user.song_likes.Contains(song.Id) && song.liked_by.Where(a => a.UserId == user.Id).Any())
+            if(_context.songsViews.Where(a=> a.UserId==user.Id&& a.SongId == song.Id).Any())
             {
                 return true;
+
             }
             else
             {
-                if (user.song_likes.Contains(song.Id))
-                {
-                   _context.likes.Add(new UserSong(song.Id,user.Id, song));
-                    _context.SaveChanges();
-                    return true;
-                }
-                if (song.liked_by.Where(a => a.UserId == user.Id).Any())
-                {
-                   
-                       user.song_likes.Add(song.Id);
-                    _userManager.UpdateAsync(user);
 
-                    return true;
-                    
-                }
                 return false;
             }
+
+
         }
 
       

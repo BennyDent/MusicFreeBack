@@ -3,29 +3,27 @@
 namespace MusicFree.Models
 {
 
-    public class AlbumnViews
+    public class AlbumnViews: ViewClass
     {
         [Key]
         public Guid Id { get; set; }
         public string UserId { get; set; }
         public Guid AlbumnId { get; set; }
 
-
+        public User user { get; set; }
       
         public Albumn albumn { get; set; }
 
-        public DateTime last_searched { get; set; }
-        public int listened { get; set; }
-        public DateTime last_listened { get; set; }
+       
+       
         public AlbumnViews() { }
-        public AlbumnViews(string userId, Guid songId,  Albumn song, DateTime lastlistened)
+        public AlbumnViews(User User,  Albumn song): base()
         {
-            last_listened = lastlistened;
-            Id = Guid.NewGuid();
-            UserId = userId;
-            AlbumnId = songId;
+            user = User;
+            UserId = user.Id;
+            AlbumnId = song.Id;
             listened = 1;
-            this.albumn = song;
+            albumn = song;
         }
     }
 }

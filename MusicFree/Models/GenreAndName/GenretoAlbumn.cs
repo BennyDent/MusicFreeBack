@@ -6,7 +6,11 @@
 
         public Guid albumn_id { get; set; }
 
-        public GenretoAlbumn() { }
+        public GenretoAlbumn() { 
+        
+        
+        
+        }
 
         public GenretoAlbumn(Genre tag, Albumn Albumn)
         {

@@ -10,7 +10,7 @@ namespace MusicFree.Models.InputModels
         public List<Guid> extra_authors { get; set; }
         public List<SongForm> songs { get; set; }
         public AlbumnType albumn_type { get; set; }
-
+        public DateTime date {  get; set; }
         public List<string> genres { get; set; }
 
         public List<string> tags { get; set; }

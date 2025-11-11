@@ -1,40 +1,43 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
-
+	
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>net9.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>02b8ec79-430e-447d-99ae-7bc77844c580</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="EntityFramework" Version="6.5.1" />
-    <PackageReference Include="GenHTTP.Adapters.AspNetCore" Version="9.8.0" />
-    <PackageReference Include="GenHTTP.Modules.ServerSentEvents" Version="9.8.0" />
-    <PackageReference Include="HotChocolate.AspNetCore" Version="13.9.12" />
-    <PackageReference Include="HotChocolate.Data.EntityFramework" Version="13.9.12" />
-    <PackageReference Include="MailKit" Version="4.8.0" />
-    <PackageReference Include="Microsoft.AspNet.Identity.EntityFramework" Version="2.2.4" />
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.10" />
-    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.3.1" />
-    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.10" />
-    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="8.0.10" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.10">
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-      <PrivateAssets>all</PrivateAssets>
-    </PackageReference>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.8" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.8" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.10">
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-      <PrivateAssets>all</PrivateAssets>
-    </PackageReference>
-    <PackageReference Include="MimeKit" Version="4.8.0" />
-    <PackageReference Include="MongoDB.Driver.GridFS" Version="2.28.0" />
-    <PackageReference Include="MongoDB.EntityFrameworkCore" Version="8.1.1" />
+    <Folder Include="Context\" />
+    <Folder Include="Models\MongoDb\" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Context\" />
+    <PackageReference Include="Cottle" Version="2.1.0" />
+    <PackageReference Include="EF6TempTableKit" Version="3.1.0" />
+    <PackageReference Include="EntityFramework" Version="6.5.1" />
+    <PackageReference Include="GenHTTP.Adapters.AspNetCore" Version="9.8.0" />
+    <PackageReference Include="GenHTTP.Api" Version="9.8.0" />
+    <PackageReference Include="GenHTTP.Modules.ServerSentEvents" Version="9.8.0" />
+    <PackageReference Include="MailKit" Version="4.13.0" />
+  
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="9.0.9" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="9.0.9" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="9.0.9" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.3.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="9.0.9" />
+    <PackageReference Include="Microsoft.AspNetCore.Session" Version="2.3.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.9" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.9">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="MimeKit" Version="4.13.0" />
+    <PackageReference Include="MongoDB.Driver" Version="3.4.3" />
+    <PackageReference Include="RestClient.Net" Version="6.0.0" />
   </ItemGroup>
 
+	
+	
+	
 </Project>

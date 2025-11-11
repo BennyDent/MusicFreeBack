@@ -2,21 +2,22 @@
 using System.ComponentModel.DataAnnotations;
 namespace MusicFree.Models
 {
-    public class MusicianUser
+    public class UserMusician
     {
         [Key]
         public Guid Id { get; set; }
-        
+        public User user { get; set; }
         public Guid AuthorId { get; set; }
-        public string UsersId { get; set; }
+        public string UserId { get; set; }
         public Musician author { get; set; }
-       
-        public MusicianUser()
+        
+        public UserMusician()
         { }
-        public MusicianUser(string song_id,  Musician song)
+        public UserMusician(User User,  Musician song)
         {
+            user = User;
             Id= Guid.NewGuid();
-            UsersId = song_id;
+            UserId = User.Id;
             AuthorId = song.Id;
             author = song;
           

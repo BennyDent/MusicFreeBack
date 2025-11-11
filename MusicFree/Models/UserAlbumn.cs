@@ -7,16 +7,19 @@ namespace MusicFree.Models
         [Key]
         public Guid Id { get; set; }
         public Guid AlbumnId { get; set; }
+
+        public User user { get; set; }
         public string UserId { get; set; }
         public Albumn Albumn { get; set; }
         public UserAlbumn()
         { }
-        public UserAlbumn(string author_id, Albumn albumn)
+        public UserAlbumn(Albumn albumn, User User)
         {
             Id = Guid.NewGuid();
             AlbumnId = albumn.Id;
-            UserId = author_id;
+            UserId = User.Id;
             Albumn = albumn;
+            user = User;
         }
     }
 }

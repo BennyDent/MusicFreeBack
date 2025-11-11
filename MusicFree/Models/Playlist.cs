@@ -8,17 +8,20 @@ namespace MusicFree.Models
 
         public string Name { get; set; }    
         public IList<PlaylistSong> songs {get; } = new List<PlaylistSong>();
-        public string AuthorId { get; set; }
+       
+
+        public User author { get; set; }
 
         public DateTime timestamp { get; set; }
         public Playlist()
         {
         }
 
-        public Playlist(string name, string authorId )
+        public Playlist(string name,  User User )
         {
+            author= User;
             Name = name;    
-            AuthorId = authorId;    
+            
             songs = new List<PlaylistSong>();
             timestamp = DateTime.Now;   
         }

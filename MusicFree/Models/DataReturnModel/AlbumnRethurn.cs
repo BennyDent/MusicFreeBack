@@ -1,9 +1,9 @@
 ﻿namespace MusicFree.Models.DataReturnModel
 {
-    public class AlbumnReturn:ReturnParent
+    public class AlbumnReturn:CoverSrcParent
     {
        
-        public AlbumnReturn main_author { get; set; }
+        public AuthorReturn main_author { get; set; }
         public List<AuthorReturn> extra_author { get; set; }
       
      

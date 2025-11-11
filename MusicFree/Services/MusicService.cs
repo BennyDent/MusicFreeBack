@@ -1,10 +1,10 @@
-﻿using MusicFree.Models;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using MongoDB.Driver;
 using MongoDB.Driver.GridFS;
-using Microsoft.AspNetCore.Mvc;
-using SQLitePCL;
-using Microsoft.AspNetCore.Identity;
+using MusicFree.Models;
 using MusicFree.Models.DataReturnModel;
+using MusicFree.Models.GenreAndName;
 namespace MusicFree.Services { 
 
 public class MusicService
@@ -19,7 +19,20 @@ public class MusicService
 
        
 
-      
+     
+
+
+        public List<AlbumnReturn> AlbumnstoAlbumnReturn(List<Albumn> albumns)
+        {
+            var albumns_return = new List<AlbumnReturn>();
+            foreach(var albumn in albumns)
+            {
+
+                albumns_return.Add(new AlbumnReturn(albumn));
+            }
+
+            return albumns_return;
+        }
         
         public List<AuthorReturn> ExtraAuthorsReturn(ICollection<SongAuthor> list)
         {
@@ -35,20 +48,120 @@ public class MusicService
 
        
 
-        
+
+       
 
 
-        public int AlbumnViews(Albumn a)
+
+        public SongViews? SongView(Song song, User user)
         {
-            var songs = a.Songs;
-            var views = 0;
-            foreach (var song in songs)
-            {//
-                views =  views + song.song_views.Count();
+            try
+            {
+                return song.song_views.Where(a => a.UserId == user.Id).First();
             }
-            return views;
+            catch { return null; }
+        }
+
+
+        public AlbumnViews? GetAlbumnView(Albumn albumn, User user) {
+            try {
+
+                return albumn.albumn_views.Where(a=> a.UserId==user.Id).First();
+            } catch { return null; }
+        
+        
+        }
+
+        
+        public List<object> AutoIncrementParentReturn(List<AutoIncrementedParent>input )
+        {
+            var list = new List<object>();
+
+            foreach(var part in input)
+            {
+                switch (part.GetType().Name)
+                {
+                 case "Song":
+                    list.Add(new SongReturn((Song)part, false));
+                    break;
+                case "Musician":
+
+                    list.Add(new AuthorReturn((Musician)part));
+                    break;
+
+                    case "Albumn":
+                        list.Add(new AlbumnReturn((Albumn)part));
+                        break;
+                }
+              
+
+
+                }
+
+
+            return list;
+        }
+        public List<object> SeveralClassReturn<T>(List<T>input)
+        {
+            var list = new List<object>();
+            foreach(var part in input)
+            {
+                switch (part.GetType().Name)
+                {
+                    case "Song":
+                        list.Add(new SongReturn((Song)(object)part,false));
+                        break;
+                    case "Genre":
+                        list.Add(new { Id = ((Genre)(object)part).Name });
+                        break;
+                    case "Tag":
+                        list.Add(new { Id = ((Tag)(object)part).Name });
+                        break;
+                    case "Musician":
+                        
+                        list.Add(new AuthorReturn((Musician)(object)part));
+                            break;
+                }
+            }
+            return list;
+        }
+
+
+
+      
+
+        public DateTime SongLastListened(Song song, User user)
+        {
+
+            if (SongView(song, user) == null)
+            {
+                throw new Exception();
+            }
+            else
+            {
+
+                return SongView(song, user).last_listened;
+            }
 
         }
+
+
+      
+
+
+
+        public int SongListened(Song song, User user)
+        {
+            if (SongView(song, user) == null)
+            {
+                return 0;
+            }
+            else
+            {
+                return SongView(song, user).listened;
+            }
+        }
+
 
         public List<AuthorReturn> MusicianstoAuthorReturn(List<Musician> authors)
         {

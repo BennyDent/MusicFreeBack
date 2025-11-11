@@ -2,9 +2,15 @@
 {
     public class ReturnParent
     {
-        public Guid Id { get; set; }
+
         public string Name { get; set; }
-        public string cover_src { get; set; }
+
       
+        public ReturnParent() { }
+
+        public ReturnParent(string name)
+        {
+            Name = name;
+        }
     }
 }

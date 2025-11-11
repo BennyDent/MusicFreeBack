@@ -6,7 +6,7 @@ namespace MusicFree.Models.GenreAndName
     {
         [Key]
         public Guid Id { get; set; }
-        public Tag tag { get; set; }
+        public Tags tag { get; set; }
         public Guid tag_id { get; set; }
 
         public Genre genre { get; set; }

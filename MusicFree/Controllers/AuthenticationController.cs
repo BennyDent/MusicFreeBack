@@ -1,21 +1,30 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿
+using GenHTTP.Adapters.AspNetCore.Types;
+using Microsoft.AspNetCore.Antiforgery;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.OpenIdConnect;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cryptography.KeyDerivation;
+using Microsoft.AspNetCore.DataProtection;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
+using MusicFree.Models;
+using MusicFree.Models.AutenthicationModels;
+using MusicFree.Models.ExtraModels;
+using MusicFree.Models.InputModels;
+using MusicFree.Services;
+using Org.BouncyCastle.Asn1.Crmf;
+using Org.BouncyCastle.Crypto.Parameters;
+using Org.BouncyCastle.Utilities;
+using System;
+using System.ComponentModel.DataAnnotations;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
-using System.Text;
-using MusicFree.Models.AutenthicationModels;
-using MusicFree.Models;
-using Azure;
-using MusicFree.Services;
-using Amazon.Runtime.Credentials.Internal;
-using Microsoft.AspNetCore.Authorization;
-using MongoDB.Driver.Core.Events;
-using System.ComponentModel.DataAnnotations;
-using System;
 using System.Security.Cryptography;
-using static Org.BouncyCastle.Asn1.Cmp.Challenge;
-using static Org.BouncyCastle.Crypto.Engines.SM2Engine;
-using Microsoft.AspNetCore.Identity;
+using System.Text;
+using System.Text.Json;
+using ZstdSharp.Unsafe;
 namespace MusicFree.Controllers
 {
 
@@ -24,14 +33,23 @@ namespace MusicFree.Controllers
     {
         private readonly FreeMusicContext _context;
         private readonly UserContext _user_context;
-        private readonly UserManager<User> _userManager;
+        private readonly UserManager<IdentityUser> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly IConfiguration _configuration;
+
+        private readonly IHttpClientFactory _httpClientFactory;
+
+       
+            
         public AuthenticationController(
-            UserManager<User> userManager,
+            IHttpClientFactory httpClientFactory,
+            IAntiforgery antiforgery,   
+            UserManager<IdentityUser> userManager,
             RoleManager<IdentityRole> roleManager,
-            IConfiguration configuration, FreeMusicContext context, UserContext user_context)
+            IConfiguration configuration, FreeMusicContext context, UserContext user_context, IDataProtectionProvider data_protector)
         {
+            
+            _httpClientFactory = httpClientFactory;
             _user_context = user_context;
             _context = context;
             _userManager = userManager;
@@ -40,108 +58,142 @@ namespace MusicFree.Controllers
             _user_context = user_context;
         }
 
-        [NonAction]
-        public string ConfirmEmailCode() {
 
-            var length = 7;
-            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-            return new string(Enumerable.Repeat(chars, length)
-        .Select(s => s[RandomNumberGenerator.GetInt32(0, s.Length)]).ToArray());
-        }
+       
 
 
-        [Route("/auth/register")]
-        [HttpPost("/auth/register")]
-        public async Task<IActionResult> Register(RegistrationInput Input)
+        [Route("auth/openid/login")]
+        [HttpGet]
+        public ActionResult Openidlogin()
         {
 
-            Console.WriteLine(11212);
+            var bytes = new byte[16];
+            var random = RandomNumberGenerator.Create();
+            random.GetBytes(bytes);
+            // and if you need it as a string...
+            string hash1 = BitConverter.ToString(bytes);
+            byte[] salt = RandomNumberGenerator.GetBytes(128 / 8);
 
-           // var is_user = await _userManager.FindByEmailAsync(Input.Email);
+            string hashed = Convert.ToBase64String(KeyDerivation.Pbkdf2(password: _configuration["Authentication:OIDC:Password"],
+                salt: salt,
+                 prf: KeyDerivationPrf.HMACSHA256,
+    iterationCount: 100000,
+    numBytesRequested: 256 / 8
 
-///            if (is_user != null)
-   //         {
-     //           EmailService emailService = new EmailService();
+                ));
 
-       //         await emailService.SendEmailAsync(Input.Email, "Confirm your Account", "Ваш код" + is_user.confirm_code);
-         //       return Ok();
-              //  return StatusCode(StatusCodes.Status500InternalServerError, new { Status = "Error", Message = "User Already exists!" });
-           // }
+
+
+            return Ok(new { client_id = _configuration["Authentication:Google:ClientId"], state=hashed+"|||"+ BitConverter.ToInt128(salt).ToString() });
+        }
+//
+        /*
+         * https://accounts.google.com/signin/oauth/id?authuser=0&part=AJi8hANTomOycLUa93AW22QrtFaIenQm1XRWZ7rbQOwTR54fGy7Hc4XH-Hhih-iMkw2RfPXrfPikdIR8xeGi_4kyEvNR1okTIPZ-FShTMZtk5MXnm1sLPdxVcqetwRKW4jKgYL7iX0Kwh-EePRmQnslp75EQSZMqQop5rD42-iqCWSMbJC3etRMRo4C2t__nF0X2iMWFIKx0UJxaEmfwuizJiZ9jZfiDeQeBJSw61GUvFo0WLo6Un208JyApkMQLUSb_TX50ARng8xoACxh9ERGHAsAA_br5vlYcc2y4n1QXdcnQ20njWkIrKlqDUXo91Q5r3_TPJ0nQuNeX7GHAjPQ8EmVSWSHJfGEnGmo2Jy-47_DD1WJCNgeEDZ2zsykZIWoN8Y6uwDrLj1-ZTpN4mRsHEwTtenkjP0uKknJTbSnZZARIumpYXOVHtN8ooXnvCaQeNDus9zNFjg1MPAjtQBiq5cAxzsuUTPV8pMeRM7fFxvDnCnCZSjBMs02d4dLOXvONrMq49s-32DCF6t9u9UxTnQjfVxW7kXmPTdxtQfbjBCjsAA4IuccG2ERsTlQAcCbE70INl5n0KOmcZequ45BWVUDZiM6am-hSoX2ES_CCCMWmVPowKnCBuVkYF15H0YfV1cPE1Z5VFvo0bz8xRMfdicoVO818IXxs0OMz8q5MCg-YLwPxidg&flowName=GeneralOAuthFlow&as=S1480329029%3A1757859025537640&client_id=932100720007-c5jgr3sm8vh9lt7p28fbnhuebqid5o0d.apps.googleusercontent.com&rapt=AEjHL4MF2JuJWtu-tKfJvQV7sSVHBoS3p1bSEYcAmOrhLGWg9XPYcGcukcWCoQ_4IIcMiZ1gE31Vd_X64ibMTtz3WshOrN_kQQ#*/
+
+
+        [Route("/signin-google")]
+        [HttpGet]
+        public async Task<ActionResult> OpenidSignin()
+        {
+            Console.WriteLine(JsonSerializer.Serialize(Request.Query));
+            Console.WriteLine(Request.Query["state"]);
+            Console.WriteLine(Request.Query["code"]);
+            Console.WriteLine(Request.Cookies["state"]);
+
+            var state_array = Request.Query["state"][0].Split("|||");; // 
+
+            var validate_string = Convert.ToBase64String(KeyDerivation.Pbkdf2(password: _configuration["Authentication:OIDC:Password"],
+                salt: BitConverter.GetBytes(Int128.Parse(state_array[1])), 
+                 prf: KeyDerivationPrf.HMACSHA256,
+    iterationCount: 100000,
+    numBytesRequested: 256 / 8
+
+                ));
+            Console.WriteLine(validate_string);
+            Console.WriteLine(state_array[0]);
+            Console.WriteLine(state_array[1]);
+            if (validate_string != state_array[0])
+            {
+                return Redirect("http://localhsot:3000/bad_authorise");
+            }
+
+
+
+            var model = await CodeExchange(Request.Query["code"][0]);
+            Response.Cookies.Append("access_token",model.access_token);
+            Response.Cookies.Append("refresh_token",model.refresh_token);
+
+
+
+            var token_id = await new JwtSecurityTokenHandler().ValidateTokenAsync(model.id_token, new TokenValidationParameters()
+            {
+                ValidateIssuer = false,
+                ValidateAudience = false,
+                ValidAudience = "https://accounts.google.com",
+                ValidIssuer = "http://localhost:7190",
+                IssuerSigningKey = new Microsoft.IdentityModel.Tokens.SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Authentication:Google:ClientSecret"]))
+            });
+
             
 
-            Console.WriteLine(ConfirmEmailCode());
-            User user = new User( Input.Username, ConfirmEmailCode(),Input.Email);
-            var radio = new UserRadio(user);
-            user.radio = radio;
-            var result = await _userManager.CreateAsync(user, Input.Password);
-            if (result.Succeeded)
-            {
-                _user_context.radios.Add(radio);
-                await _user_context.SaveChangesAsync();
-                Console.WriteLine(4);
-                // генерация токена для пользователя
+            if (await _context.user.FindAsync(token_id.Claims["sub"])==null) {
 
-
-                EmailService emailService = new EmailService();
-
-                await emailService.SendEmailAsync(Input.Email, "Confirm your Account", "Ваш код" + user.confirm_code);
-            }
-            else
-            {
-                foreach (var error in result.Errors)
+                User user = new User()
                 {
-                   // Console.WriteLine(error.Description);
-                }
-            }
-            Console.WriteLine(result.Succeeded);
-            return Ok(new { email = Input.Email });
-        }
-
-
-        [Route("/auth/guest/login/")]
-        [HttpPost]
-        public async Task<ActionResult> GuestLogin()
-        {
-
-            var user = new User();
-            user.radio = new UserRadio(user);
-            var result = await _userManager.CreateAsync(user);
-            if (result.Succeeded)
-            {
-                var authClaims = new List<Claim>
-            {new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
-                    new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-            };
-                var token = GetToken(authClaims);
-
-                return Ok(new { token = new JwtSecurityTokenHandler().WriteToken(token) });            }
-            else
-            {
-            return StatusCode(StatusCodes.Status500InternalServerError, new { Status = "Error", Message = "User doesn't exist!" });
-            }
+                    Id = (string)token_id.Claims["sub"],
+                    email = (string)token_id.Claims["email"]
+                };
+                _context.user.Add(user);
+                await _context.SaveChangesAsync();
                 
+                return Redirect("http://localhost:3000/add_username");
+
+            }
+
+
+
+            return Redirect("http://localhost:3000/music/main_page");
         }
 
 
-        [Authorize(Roles = "Guest")]
-        [Route("auth/guest/delete")]
-        [HttpDelete]
-        public async Task<ActionResult> GuestDeleteAccount()
+        [Authorize(AuthenticationSchemes= "oidc-demo")]
+        [Route("/auth/username/add")]
+        [HttpPost]
+        public async Task<ActionResult> UsernameAdd(UsernameInput input)
         {
-            var user = await _userManager.GetUserAsync(HttpContext.User);
-            var result = await _userManager.DeleteAsync(user);
-            if (result.Succeeded)
-            {
 
-                return Ok();
+            var _cms = new ContextMusicService(_userManager,_context);
+            User user = await _cms.ReturnUserModel(HttpContext.User);
+
+            user.username = input.username;
+
+            await _context.SaveChangesAsync();
+
+            return Redirect("http://localhost:3000/music/main_page");
+
+        }
+
+//"https://accounts.google.com/signin/oauth/id"
+      
+        
+        private async  Task<GoogleAutenthicationReturn> CodeExchange(string code)
+        {
+            var client = _httpClientFactory.CreateClient();
+            var dict = new Dictionary<string, string>();
+            dict.Add("code", code);
+            dict.Add("client_id", _configuration["Authentication:Google:ClientId"]);
+            dict.Add("client_secret", _configuration["Authentication:Google:ClientSecret"]);
+            dict.Add("grant_type", "authorisation_code");
+            dict.Add("redirect_uri", "http://localhost:7190/sign-in");
+             dict.Add("access_type", "offline");
+           
+            var result = await client.PostAsync("https://oauth2.googleapis.com/token",  new FormUrlEncodedContent(dict));
+            if(result.StatusCode==System.Net.HttpStatusCode.BadRequest)
+            {
+                throw new Exception();
             }
-            else
-            {
-
-                return BadRequest();
-            }  
-
-
+            var google = new GoogleAutenthicationReturn();
+            return (GoogleAutenthicationReturn)await result.Content.ReadFromJsonAsync(google.GetType());
         }
 
         
@@ -168,7 +220,7 @@ namespace MusicFree.Controllers
             var token = GetToken(authClaims);
 
             return Ok(new { token = new JwtSecurityTokenHandler().WriteToken(token), username = user.UserName, email = user.Email });
-           
+            
         }
 
         private JwtSecurityToken GetToken(List<Claim> authClaims)
@@ -202,52 +254,50 @@ namespace MusicFree.Controllers
             {
                 Console.WriteLine(callbackUrl);
             }
-            await emailService.SendEmailAsync(email, "Confirm your Account", "Подтвердите регистрацию, перейдя по ссылке:" + user.confirm_code);
+            await emailService.SendEmailAsync(email, "Confirm your Account", "Подтвердите регистрацию, перейдя по ссылке:");
 
             return Ok();
         }
+
+       
+
+    
+
+
+
+        [Route("auth/token/refresh")]
+        [HttpPost]
+        public async Task<ActionResult> RefreshToken()
+        {
+
+
+            try
+            {
+                var model = await CodeExchange(Request.Query["refresh_token"]);
+                Response.Cookies.Append("access_token", model.access_token);
+                Response.Cookies.Append("refresh_token", model.refresh_token);
+
+            }
+            catch (Exception ex) {
+
+                return BadRequest();
+            
+            }
+            
+           
+            return Ok();
+        }
+
+
 
 
         [Route("auth/confirm/")]
         [HttpPost("auth/confirm/")]
         public async Task<ActionResult> ConfirmEmail(ConfirmEmail input)
         {
-            Console.WriteLine(3434);
-            if (input.Email == null || input.Code == null)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError, new { Message = "Wrong Email!" });
-            }
-            var user = await _userManager.FindByEmailAsync(input.Email);
-            if (user == null)
-            {
-                return View("Error");
-            }
-            if (input.Code == user.confirm_code)
-            {
-                user.EmailConfirmed = true;
-                await _userManager.UpdateAsync(user);
-                return Ok("Succeeded! Email confirmed!");
-            }
-            else { return View("Error"); }
-
+            return Ok();
         }
         [Authorize]
-        [Route("auth/check")]
-        [HttpGet("auth/check")]
-        public async Task<ActionResult> AuthenticatedCheck()
-        {
-            Console.WriteLine(HttpContext.User.Claims.FirstOrDefault().ToString());
-            var user = await _userManager.GetUserAsync(HttpContext.User);
-            Console.WriteLine(user);
-            if (user == null)
-            {
-                return StatusCode(StatusCodes.Status500InternalServerError);
-            }
-
-            return Ok(new { username = user.UserName });
-
-        }
-
         [Route("auth/delete/{email})")]
         [HttpPost("auth/delete/{email}")]
         public async Task<ActionResult> DeleteAccount(string email)
@@ -291,5 +341,31 @@ namespace MusicFree.Controllers
             }
             else { return  BadRequest(); }
         }
+
+
+
+
+
+
+
+
+
+        [NonAction]
+        public async Task CreateuserModel(string user_id, string username, string email)
+        {
+            var user = new User(user_id, username, email);
+            var radio = new UserRadio(user);
+            _context.user.Add(user);
+            _context.user_radio.Add(radio);
+            await _context.SaveChangesAsync();
+
+
+
+        }
+
+
+
+
+
     } 
 }

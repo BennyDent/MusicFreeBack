@@ -1,130 +1,268 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\gearg\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\MusicFreeBack\\",
+  "WorkspaceRootPath": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\gearg\\onedrive\\\u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\github\\musicfreeback\\musicfree\\controllers\\recomendationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\controllers\\recomendationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\\u0438\u043B\u044C\u044F\\desktop\\musicfree\\musicfree\\musicfree\\services\\gridfsplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\services\\gridfsplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\gearg\\onedrive\\\u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\github\\musicfreeback\\musicfree\\models\\musician.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\models\\musician.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\gearg\\onedrive\\\u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\github\\musicfreeback\\musicfree\\controllers\\genrecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\controllers\\genrecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\gearg\\onedrive\\\u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\github\\musicfreeback\\musicfree\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\gearg\\onedrive\\\u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\github\\musicfreeback\\musicfree\\controllers\\musicfindcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\controllers\\musicfindcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\gearg\\onedrive\\\u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\github\\musicfreeback\\musicfree\\models\\albumncreatecs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\models\\albumncreatecs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\gearg\\onedrive\\\u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\github\\musicfreeback\\musicfree\\models\\likeuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\models\\likeuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\gearg\\onedrive\\\u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\github\\musicfreeback\\musicfree\\models\\genreandname.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\models\\genreandname.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\gearg\\onedrive\\\u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\github\\musicfreeback\\musicfree\\controllers\\musiccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\\u0438\u043B\u044C\u044F\\desktop\\musicfree\\musicfree\\musicfree\\controllers\\musiccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\controllers\\musiccontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\gearg\\onedrive\\\u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\github\\musicfreeback\\musicfree\\controllers\\likesandplaylistscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\controllers\\likesandplaylistscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\\u0438\u043B\u044C\u044F\\desktop\\musicfree\\musicfree\\musicfree\\models\\datareturnmodel\\albumnrethurn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\models\\datareturnmodel\\albumnrethurn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\gearg\\onedrive\\\u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\github\\musicfreeback\\musicfree\\freemusiccontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\freemusiccontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\\u0438\u043B\u044C\u044F\\desktop\\musicfree\\musicfree\\musicfree\\models\\datareturnmodel\\songreturn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\models\\datareturnmodel\\songreturn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\gearg\\onedrive\\\u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\github\\musicfreeback\\musicfree\\models\\appearedsongs.cs||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\models\\appearedsongs.cs||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\\u0438\u043B\u044C\u044F\\desktop\\musicfree\\musicfree\\musicfree\\controllers\\recomendationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\controllers\\recomendationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\gearg\\onedrive\\\u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\github\\musicfreeback\\musicfree\\models\\appearedsongs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\models\\appearedsongs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\\u0438\u043B\u044C\u044F\\desktop\\musicfree\\musicfree\\musicfree\\controllers\\musicfindcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\controllers\\musicfindcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\gearg\\onedrive\\\u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\github\\musicfreeback\\musicfree\\models\\albumn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\models\\albumn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\gearg\\onedrive\\\u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\github\\musicfreeback\\musicfree\\models\\song.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\models\\song.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\gearg\\onedrive\\\u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\github\\musicfreeback\\musicfree\\models\\albumnauthor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\models\\albumnauthor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\gearg\\onedrive\\\u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\github\\musicfreeback\\musicfree\\models\\genre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\models\\genre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\gearg\\onedrive\\\u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\github\\musicfreeback\\musicfree\\models\\confirmemail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\models\\confirmemail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\gearg\\onedrive\\\u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\github\\musicfreeback\\musicfree\\models\\usercs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\models\\usercs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\gearg\\onedrive\\\u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\github\\musicfreeback\\musicfree\\models\\likecs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\models\\likecs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\gearg\\onedrive\\\u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\github\\musicfreeback\\musicfree\\models\\authorreturn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\models\\authorreturn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\gearg\\onedrive\\\u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\github\\musicfreeback\\musicfree\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\\u0438\u043B\u044C\u044F\\desktop\\musicfree\\musicfree\\musicfree\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\gearg\\onedrive\\\u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\github\\musicfreeback\\musicfree\\utilities\\multipartrequesthelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\utilities\\multipartrequesthelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\\u0438\u043B\u044C\u044F\\desktop\\musicfree\\musicfree\\musicfree\\services\\contextmusicservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\services\\contextmusicservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\gearg\\onedrive\\\u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\github\\musicfreeback\\musicfree\\models\\musicauthor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\models\\musicauthor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\\u0438\u043B\u044C\u044F\\desktop\\musicfree\\musicfree\\musicfree\\controllers\\authenticationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\controllers\\authenticationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\gearg\\onedrive\\\u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\github\\musicfreeback\\musicfree\\services\\musicservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\\u0438\u043B\u044C\u044F\\desktop\\musicfree\\musicfree\\musicfree\\controllers\\genrecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\controllers\\genrecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\\u0438\u043B\u044C\u044F\\desktop\\musicfree\\musicfree\\musicfree\\services\\musicservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\services\\musicservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\gearg\\onedrive\\\u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\github\\musicfreeback\\musicfree\\models\\songform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\models\\songform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\\u0438\u043B\u044C\u044F\\desktop\\musicfree\\musicfree\\musicfree\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\gearg\\onedrive\\\u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\github\\musicfreeback\\musicfree\\utilities\\disableformvaluemodelbindingattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\utilities\\disableformvaluemodelbindingattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\\u0438\u043B\u044C\u044F\\desktop\\musicfree\\musicfree\\musicfree\\models\\datareturnmodel\\coversrcparent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\models\\datareturnmodel\\coversrcparent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\gearg\\onedrive\\\u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\github\\musicfreeback\\musicfree\\models\\musicuploadmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\models\\musicuploadmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\\u0438\u043B\u044C\u044F\\desktop\\musicfree\\musicfree\\musicfree\\models\\datareturnmodel\\authorreturn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\models\\datareturnmodel\\authorreturn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\gearg\\onedrive\\\u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\github\\musicfreeback\\musicfree\\models\\albumn_create.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\models\\albumn_create.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\\u0438\u043B\u044C\u044F\\desktop\\musicfree\\musicfree\\musicfree\\models\\song.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\models\\song.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\gearg\\onedrive\\\u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\github\\musicfreeback\\musicfree\\models\\song_filename.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\models\\song_filename.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\\u0438\u043B\u044C\u044F\\desktop\\musicfree\\musicfree\\musicfree\\models\\genreandname\\tagcollection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\models\\genreandname\\tagcollection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\gearg\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\MusicFreeBack\\MusicFree\\Migrations\\20241008195743_first.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:MusicFree\\Migrations\\20241008195743_first.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\\u0438\u043B\u044C\u044F\\desktop\\musicfree\\musicfree\\musicfree\\models\\usersearch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\models\\usersearch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\\u0438\u043B\u044C\u044F\\desktop\\musicfree\\musicfree\\musicfree\\freemusiccontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\freemusiccontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\\u0438\u043B\u044C\u044F\\desktop\\musicfree\\musicfree\\musicfree\\models\\albumn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\models\\albumn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\\u0438\u043B\u044C\u044F\\desktop\\musicfree\\musicfree\\musicfree\\models\\musician.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\models\\musician.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\\u0438\u043B\u044C\u044F\\desktop\\musicfree\\musicfree\\musicfree\\models\\datareturnmodel\\returnparent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\models\\datareturnmodel\\returnparent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\\u0438\u043B\u044C\u044F\\desktop\\musicfree\\musicfree\\musicfree\\services\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\services\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\\u0438\u043B\u044C\u044F\\desktop\\musicfree\\musicfree\\musicfree\\models\\viewclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\models\\viewclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\\u0438\u043B\u044C\u044F\\desktop\\musicfree\\musicfree\\musicfree\\controllers\\listenedcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\controllers\\listenedcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\\u0438\u043B\u044C\u044F\\desktop\\musicfree\\musicfree\\musicfree\\controllers\\likesandplaylistscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\controllers\\likesandplaylistscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\\u0438\u043B\u044C\u044F\\desktop\\musicfree\\musicfree\\musicfree\\tempcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\tempcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\\u0438\u043B\u044C\u044F\\desktop\\musicfree\\musicfree\\musicfree\\utilities\\multipartrequesthelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\utilities\\multipartrequesthelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\\u0438\u043B\u044C\u044F\\desktop\\musicfree\\musicfree\\musicfree\\models\\genreandname\\tagtosong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\models\\genreandname\\tagtosong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\\u0438\u043B\u044C\u044F\\desktop\\musicfree\\musicfree\\musicfree\\models\\inputmodels\\songform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\models\\inputmodels\\songform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\\u0438\u043B\u044C\u044F\\desktop\\musicfree\\musicfree\\musicfree\\models\\inputmodels\\usernameinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\models\\inputmodels\\usernameinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\\u0438\u043B\u044C\u044F\\desktop\\musicfree\\musicfree\\musicfree\\models\\inputmodels\\logininput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\models\\inputmodels\\logininput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\\u0438\u043B\u044C\u044F\\desktop\\musicfree\\musicfree\\musicfree\\models\\inputmodels\\rolelogininput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\models\\inputmodels\\rolelogininput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\\u0438\u043B\u044C\u044F\\desktop\\musicfree\\musicfree\\musicfree\\models\\genreandname\\genre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\models\\genreandname\\genre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\\u0438\u043B\u044C\u044F\\desktop\\musicfree\\musicfree\\musicfree\\models\\lastsearch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\models\\lastsearch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\\u0438\u043B\u044C\u044F\\desktop\\musicfree\\musicfree\\musicfree\\models\\usersong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\models\\usersong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\\u0438\u043B\u044C\u044F\\desktop\\musicfree\\musicfree\\musicfree\\userroles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\userroles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\\u0438\u043B\u044C\u044F\\desktop\\musicfree\\musicfree\\musicfree\\models\\songviews.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\models\\songviews.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\\u0438\u043B\u044C\u044F\\desktop\\musicfree\\musicfree\\musicfree\\models\\genreandname\\genretosong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\models\\genreandname\\genretosong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\\u0438\u043B\u044C\u044F\\desktop\\musicfree\\musicfree\\musicfree\\models\\genreandname\\genretoalbumn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\models\\genreandname\\genretoalbumn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\\u0438\u043B\u044C\u044F\\desktop\\musicfree\\musicfree\\musicfree\\models\\genreandname\\genretagcollection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\models\\genreandname\\genretagcollection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\\u0438\u043B\u044C\u044F\\desktop\\musicfree\\musicfree\\musicfree\\models\\genreandname\\genretag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\models\\genreandname\\genretag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\\u0438\u043B\u044C\u044F\\desktop\\musicfree\\musicfree\\musicfree\\models\\genreandname\\genregenre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\models\\genreandname\\genregenre.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\\u0438\u043B\u044C\u044F\\desktop\\musicfree\\musicfree\\musicfree\\models\\genreandname\\genrecollection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\models\\genreandname\\genrecollection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\\u0438\u043B\u044C\u044F\\desktop\\musicfree\\musicfree\\musicfree\\models\\genreandname\\genreandnamecollection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\models\\genreandname\\genreandnamecollection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\\u0438\u043B\u044C\u044F\\desktop\\musicfree\\musicfree\\musicfree\\models\\autoincrementedparent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\models\\autoincrementedparent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\\u0438\u043B\u044C\u044F\\desktop\\musicfree\\musicfree\\musicfree\\dataprotectorprovidercs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\dataprotectorprovidercs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\\u0438\u043B\u044C\u044F\\desktop\\musicfree\\musicfree\\musicfree\\custoncookie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\custoncookie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\\u0438\u043B\u044C\u044F\\desktop\\musicfree\\musicfree\\musicfree\\customxmlrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\customxmlrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\\u0438\u043B\u044C\u044F\\desktop\\musicfree\\musicfree\\musicfree\\models\\datareturnmodel\\paginationreturndata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\models\\datareturnmodel\\paginationreturndata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\\u0438\u043B\u044C\u044F\\desktop\\musicfree\\musicfree\\musicfree\\models\\datareturnmodel\\namidreturn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\models\\datareturnmodel\\namidreturn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\\u0438\u043B\u044C\u044F\\desktop\\musicfree\\musicfree\\musicfree\\user_context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\user_context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\\u0438\u043B\u044C\u044F\\desktop\\musicfree\\musicfree\\musicfree\\musicfree.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\musicfree.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\\u0438\u043B\u044C\u044F\\desktop\\musicfree\\musicfree\\musicfree\\models\\extramodels\\googleautenthicationreturn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\models\\extramodels\\googleautenthicationreturn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\\u0438\u043B\u044C\u044F\\desktop\\musicfree\\musicfree\\musicfree\\models\\mainparent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\models\\mainparent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\\u0438\u043B\u044C\u044F\\desktop\\musicfree\\musicfree\\musicfree\\models\\tempmodels\\stackmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\models\\tempmodels\\stackmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\\u0438\u043B\u044C\u044F\\desktop\\musicfree\\musicfree\\musicfree\\models\\datareturnmodel\\nameidreturndata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\models\\datareturnmodel\\nameidreturndata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\\u0438\u043B\u044C\u044F\\desktop\\musicfree\\musicfree\\musicfree\\models\\inputmodels\\listenedinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\models\\inputmodels\\listenedinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\\u0438\u043B\u044C\u044F\\desktop\\musicfree\\musicfree\\musicfree\\models\\datareturnmodel\\pagereturn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\models\\datareturnmodel\\pagereturn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\\u0438\u043B\u044C\u044F\\desktop\\musicfree\\musicfree\\musicfree\\models\\datareturnmodel\\searchreturn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\models\\datareturnmodel\\searchreturn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\\u0438\u043B\u044C\u044F\\desktop\\musicfree\\musicfree\\musicfree\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\\u0438\u043B\u044C\u044F\\desktop\\musicfree\\musicfree\\musicfree\\dataprotector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\dataprotector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\\u0418\u043B\u044C\u044F\\AppData\\Roaming\\Microsoft\\UserSecrets\\02b8ec79-430e-447d-99ae-7bc77844c580\\secrets.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\\u0438\u043B\u044C\u044F\\desktop\\musicfree\\musicfree\\musicfree\\models\\datareturnmodel\\idreturnparent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\models\\datareturnmodel\\idreturnparent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\\u0438\u043B\u044C\u044F\\desktop\\musicfree\\musicfree\\musicfree\\models\\inputmodels\\add_to_playlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\models\\inputmodels\\add_to_playlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|c:\\users\\\u0438\u043B\u044C\u044F\\desktop\\musicfree\\musicfree\\musicfree\\models\\useralbumn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9C2D8E86-3E27-4A47-A56D-2F1440C61FCF}|MusicFree\\MusicFree.csproj|solutionrelative:musicfree\\models\\useralbumn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -134,397 +272,822 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 5,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "AlbumnCreatecs.cs",
-              "DocumentMoniker": "C:\\Users\\gearg\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\MusicFreeBack\\MusicFree\\Models\\AlbumnCreatecs.cs",
-              "RelativeDocumentMoniker": "MusicFree\\Models\\AlbumnCreatecs.cs",
-              "ToolTip": "C:\\Users\\gearg\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\MusicFreeBack\\MusicFree\\Models\\AlbumnCreatecs.cs",
-              "RelativeToolTip": "MusicFree\\Models\\AlbumnCreatecs.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T21:46:29.872Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1084735533:0:{83107a3e-496a-485e-b455-16ddb978e55e}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "LikesAndPlaylistsController.cs",
-              "DocumentMoniker": "C:\\Users\\gearg\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\MusicFreeBack\\MusicFree\\Controllers\\LikesAndPlaylistsController.cs",
-              "RelativeDocumentMoniker": "MusicFree\\Controllers\\LikesAndPlaylistsController.cs",
-              "ToolTip": "C:\\Users\\gearg\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\MusicFreeBack\\MusicFree\\Controllers\\LikesAndPlaylistsController.cs",
-              "RelativeToolTip": "MusicFree\\Controllers\\LikesAndPlaylistsController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "DocumentIndex": 1,
+              "Title": "MusicController.cs",
+              "DocumentMoniker": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Controllers\\MusicController.cs",
+              "RelativeDocumentMoniker": "MusicFree\\Controllers\\MusicController.cs",
+              "ToolTip": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Controllers\\MusicController.cs",
+              "RelativeToolTip": "MusicFree\\Controllers\\MusicController.cs",
+              "ViewState": "AgIAAAICAAAAAAAAAAAMwNsBAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T21:31:46.578Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "MusicFindController.cs",
-              "DocumentMoniker": "C:\\Users\\gearg\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\MusicFreeBack\\MusicFree\\Controllers\\MusicFindController.cs",
-              "RelativeDocumentMoniker": "MusicFree\\Controllers\\MusicFindController.cs",
-              "ToolTip": "C:\\Users\\gearg\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\MusicFreeBack\\MusicFree\\Controllers\\MusicFindController.cs",
-              "RelativeToolTip": "MusicFree\\Controllers\\MusicFindController.cs",
-              "ViewState": "AQIAADMAAAAAAAAAAAAYwAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T21:07:48.4Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "GenreController.cs",
-              "DocumentMoniker": "C:\\Users\\gearg\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\MusicFreeBack\\MusicFree\\Controllers\\GenreController.cs",
-              "RelativeDocumentMoniker": "MusicFree\\Controllers\\GenreController.cs",
-              "ToolTip": "C:\\Users\\gearg\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\MusicFreeBack\\MusicFree\\Controllers\\GenreController.cs",
-              "RelativeToolTip": "MusicFree\\Controllers\\GenreController.cs",
-              "ViewState": "AQIAABEAAAAAAAAAAAAAABEAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T21:07:03.019Z",
+              "WhenOpened": "2025-09-10T16:45:34.888Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "GridFsPlayer.cs",
+              "DocumentMoniker": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Services\\GridFsPlayer.cs",
+              "RelativeDocumentMoniker": "MusicFree\\Services\\GridFsPlayer.cs",
+              "ToolTip": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Services\\GridFsPlayer.cs",
+              "RelativeToolTip": "MusicFree\\Services\\GridFsPlayer.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAawEAAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-03T20:09:10.532Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ContextMusicService.cs",
+              "DocumentMoniker": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Services\\ContextMusicService.cs",
+              "RelativeDocumentMoniker": "MusicFree\\Services\\ContextMusicService.cs",
+              "ToolTip": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Services\\ContextMusicService.cs",
+              "RelativeToolTip": "MusicFree\\Services\\ContextMusicService.cs",
+              "ViewState": "AgIAAIIBAAAAAAAAAAAAAI8BAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-14T10:34:06.99Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "RecomendationController.cs",
-              "DocumentMoniker": "C:\\Users\\gearg\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\MusicFreeBack\\MusicFree\\Controllers\\RecomendationController.cs",
+              "DocumentMoniker": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Controllers\\RecomendationController.cs",
               "RelativeDocumentMoniker": "MusicFree\\Controllers\\RecomendationController.cs",
-              "ToolTip": "C:\\Users\\gearg\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\MusicFreeBack\\MusicFree\\Controllers\\RecomendationController.cs",
+              "ToolTip": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Controllers\\RecomendationController.cs",
               "RelativeToolTip": "MusicFree\\Controllers\\RecomendationController.cs",
-              "ViewState": "AQIAACoAAAAAAAAAAAAAACoAAAAJAAAA",
+              "ViewState": "AgIAAIsBAAAAAAAAAAAWwIABAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T21:06:54.505Z",
+              "WhenOpened": "2025-09-10T17:42:32.872Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "AppearedSongs.cs",
-              "DocumentMoniker": "C:\\Users\\gearg\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\MusicFreeBack\\MusicFree\\Models\\AppearedSongs.cs",
-              "RelativeDocumentMoniker": "MusicFree\\Models\\AppearedSongs.cs",
-              "ToolTip": "C:\\Users\\gearg\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\MusicFreeBack\\MusicFree\\Models\\AppearedSongs.cs",
-              "RelativeToolTip": "MusicFree\\Models\\AppearedSongs.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAMAAAA",
+              "DocumentIndex": 5,
+              "Title": "MusicFindController.cs",
+              "DocumentMoniker": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Controllers\\MusicFindController.cs",
+              "RelativeDocumentMoniker": "MusicFree\\Controllers\\MusicFindController.cs",
+              "ToolTip": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Controllers\\MusicFindController.cs",
+              "RelativeToolTip": "MusicFree\\Controllers\\MusicFindController.cs",
+              "ViewState": "AgIAANQAAAAAAAAAAAAtwOMAAABOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T21:04:10.201Z",
+              "WhenOpened": "2025-09-10T18:10:46.445Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "AppearedSongs.cs",
-              "DocumentMoniker": "C:\\Users\\gearg\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\MusicFreeBack\\MusicFree\\Models\\AppearedSongs.cs",
-              "RelativeDocumentMoniker": "MusicFree\\Models\\AppearedSongs.cs",
-              "ToolTip": "C:\\Users\\gearg\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\MusicFreeBack\\MusicFree\\Models\\AppearedSongs.cs",
-              "RelativeToolTip": "MusicFree\\Models\\AppearedSongs.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAhAAAA",
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Program.cs",
+              "RelativeDocumentMoniker": "MusicFree\\Program.cs",
+              "ToolTip": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Program.cs",
+              "RelativeToolTip": "MusicFree\\Program.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAADgvyMAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-09T20:55:54.226Z",
+              "WhenOpened": "2025-09-10T16:40:32.051Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\gearg\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\MusicFreeBack\\MusicFree\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "MusicFree\\Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\gearg\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\MusicFreeBack\\MusicFree\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "MusicFree\\Controllers\\HomeController.cs",
-              "ViewState": "AQIAAA0AAAAAAAAAAAAAwAoAAAADAAAA",
+              "Title": "SongReturn.cs",
+              "DocumentMoniker": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Models\\DataReturnModel\\SongReturn.cs",
+              "RelativeDocumentMoniker": "MusicFree\\Models\\DataReturnModel\\SongReturn.cs",
+              "ToolTip": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Models\\DataReturnModel\\SongReturn.cs",
+              "RelativeToolTip": "MusicFree\\Models\\DataReturnModel\\SongReturn.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAYwBgAAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-03T17:36:07.656Z",
+              "WhenOpened": "2025-10-03T00:41:15.439Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "ConfirmEmail.cs",
-              "DocumentMoniker": "C:\\Users\\gearg\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\MusicFreeBack\\MusicFree\\Models\\ConfirmEmail.cs",
-              "RelativeDocumentMoniker": "MusicFree\\Models\\ConfirmEmail.cs",
-              "ToolTip": "C:\\Users\\gearg\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\MusicFreeBack\\MusicFree\\Models\\ConfirmEmail.cs",
-              "RelativeToolTip": "MusicFree\\Models\\ConfirmEmail.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "DocumentIndex": 2,
+              "Title": "AlbumnRethurn.cs",
+              "DocumentMoniker": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Models\\DataReturnModel\\AlbumnRethurn.cs",
+              "RelativeDocumentMoniker": "MusicFree\\Models\\DataReturnModel\\AlbumnRethurn.cs",
+              "ToolTip": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Models\\DataReturnModel\\AlbumnRethurn.cs",
+              "RelativeToolTip": "MusicFree\\Models\\DataReturnModel\\AlbumnRethurn.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-03T17:34:28.945Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "Genre.cs",
-              "DocumentMoniker": "C:\\Users\\gearg\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\MusicFreeBack\\MusicFree\\Models\\Genre.cs",
-              "RelativeDocumentMoniker": "MusicFree\\Models\\Genre.cs",
-              "ToolTip": "C:\\Users\\gearg\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\MusicFreeBack\\MusicFree\\Models\\Genre.cs",
-              "RelativeToolTip": "MusicFree\\Models\\Genre.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-03T17:34:25.828Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "GenreAndName.cs",
-              "DocumentMoniker": "C:\\Users\\gearg\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\MusicFreeBack\\MusicFree\\Models\\GenreAndName.cs",
-              "RelativeDocumentMoniker": "MusicFree\\Models\\GenreAndName.cs",
-              "ToolTip": "C:\\Users\\gearg\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\MusicFreeBack\\MusicFree\\Models\\GenreAndName.cs",
-              "RelativeToolTip": "MusicFree\\Models\\GenreAndName.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAcwBEAAAA1AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-03T17:34:03.841Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "Usercs.cs",
-              "DocumentMoniker": "C:\\Users\\gearg\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\MusicFreeBack\\MusicFree\\Models\\Usercs.cs",
-              "RelativeDocumentMoniker": "MusicFree\\Models\\Usercs.cs",
-              "ToolTip": "C:\\Users\\gearg\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\MusicFreeBack\\MusicFree\\Models\\Usercs.cs",
-              "RelativeToolTip": "MusicFree\\Models\\Usercs.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAjAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-12T15:12:12.123Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "LikeUser.cs",
-              "DocumentMoniker": "C:\\Users\\gearg\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\MusicFreeBack\\MusicFree\\Models\\LikeUser.cs",
-              "RelativeDocumentMoniker": "MusicFree\\Models\\LikeUser.cs",
-              "ToolTip": "C:\\Users\\gearg\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\MusicFreeBack\\MusicFree\\Models\\LikeUser.cs",
-              "RelativeToolTip": "MusicFree\\Models\\LikeUser.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAVAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-12T15:10:41.339Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "Likecs.cs",
-              "DocumentMoniker": "C:\\Users\\gearg\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\MusicFreeBack\\MusicFree\\Models\\Likecs.cs",
-              "RelativeDocumentMoniker": "MusicFree\\Models\\Likecs.cs",
-              "ToolTip": "C:\\Users\\gearg\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\MusicFreeBack\\MusicFree\\Models\\Likecs.cs",
-              "RelativeToolTip": "MusicFree\\Models\\Likecs.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-12T15:07:26.104Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "20241008195743_first.cs",
-              "DocumentMoniker": "C:\\Users\\gearg\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\MusicFreeBack\\MusicFree\\Migrations\\20241008195743_first.cs",
-              "RelativeDocumentMoniker": "MusicFree\\Migrations\\20241008195743_first.cs",
-              "ToolTip": "C:\\Users\\gearg\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\MusicFreeBack\\MusicFree\\Migrations\\20241008195743_first.cs",
-              "RelativeToolTip": "MusicFree\\Migrations\\20241008195743_first.cs",
-              "ViewState": "AQIAAGIAAAAAAAAAAAAAAGIAAAAlAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-08T19:57:52.497Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "Albumn_Create.cs",
-              "DocumentMoniker": "C:\\Users\\gearg\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\MusicFreeBack\\MusicFree\\Models\\Albumn_Create.cs",
-              "RelativeDocumentMoniker": "MusicFree\\Models\\Albumn_Create.cs",
-              "ToolTip": "C:\\Users\\gearg\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\MusicFreeBack\\MusicFree\\Models\\Albumn_Create.cs",
-              "RelativeToolTip": "MusicFree\\Models\\Albumn_Create.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAxAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T20:10:16.29Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "Song_filename.cs",
-              "DocumentMoniker": "C:\\Users\\gearg\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\MusicFreeBack\\MusicFree\\Models\\Song_filename.cs",
-              "RelativeDocumentMoniker": "MusicFree\\Models\\Song_filename.cs",
-              "ToolTip": "C:\\Users\\gearg\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\MusicFreeBack\\MusicFree\\Models\\Song_filename.cs",
-              "RelativeToolTip": "MusicFree\\Models\\Song_filename.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAA2AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T14:32:28.386Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "AlbumnAuthor.cs",
-              "DocumentMoniker": "C:\\Users\\gearg\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\MusicFreeBack\\MusicFree\\Models\\AlbumnAuthor.cs",
-              "RelativeDocumentMoniker": "MusicFree\\Models\\AlbumnAuthor.cs",
-              "ToolTip": "C:\\Users\\gearg\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\MusicFreeBack\\MusicFree\\Models\\AlbumnAuthor.cs",
-              "RelativeToolTip": "MusicFree\\Models\\AlbumnAuthor.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAeAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-05T19:43:32.403Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "SongForm.cs",
-              "DocumentMoniker": "C:\\Users\\gearg\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\MusicFreeBack\\MusicFree\\Models\\SongForm.cs",
-              "RelativeDocumentMoniker": "MusicFree\\Models\\SongForm.cs",
-              "ToolTip": "C:\\Users\\gearg\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\MusicFreeBack\\MusicFree\\Models\\SongForm.cs",
-              "RelativeToolTip": "MusicFree\\Models\\SongForm.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-05T14:53:04.005Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Albumn.cs",
-              "DocumentMoniker": "C:\\Users\\gearg\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\MusicFreeBack\\MusicFree\\Models\\Albumn.cs",
-              "RelativeDocumentMoniker": "MusicFree\\Models\\Albumn.cs",
-              "ToolTip": "C:\\Users\\gearg\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\MusicFreeBack\\MusicFree\\Models\\Albumn.cs",
-              "RelativeToolTip": "MusicFree\\Models\\Albumn.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-05T14:48:38.711Z",
+              "WhenOpened": "2025-09-11T14:21:49.581Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
-              "Title": "FreeMusicContext.cs",
-              "DocumentMoniker": "C:\\Users\\gearg\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\MusicFreeBack\\MusicFree\\FreeMusicContext.cs",
-              "RelativeDocumentMoniker": "MusicFree\\FreeMusicContext.cs",
-              "ToolTip": "C:\\Users\\gearg\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\MusicFreeBack\\MusicFree\\FreeMusicContext.cs",
-              "RelativeToolTip": "MusicFree\\FreeMusicContext.cs",
-              "ViewState": "AQIAABUAAAAAAAAAAAAvwBoAAABLAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-30T12:54:10.06Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "MusicAuthor.cs",
-              "DocumentMoniker": "C:\\Users\\gearg\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\MusicFreeBack\\MusicFree\\Models\\MusicAuthor.cs",
-              "RelativeDocumentMoniker": "MusicFree\\Models\\MusicAuthor.cs",
-              "ToolTip": "C:\\Users\\gearg\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\MusicFreeBack\\MusicFree\\Models\\MusicAuthor.cs",
-              "RelativeToolTip": "MusicFree\\Models\\MusicAuthor.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-30T12:50:38.682Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "DisableFormValueModelBindingAttribute.cs",
-              "DocumentMoniker": "C:\\Users\\gearg\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\MusicFreeBack\\MusicFree\\utilities\\DisableFormValueModelBindingAttribute.cs",
-              "RelativeDocumentMoniker": "MusicFree\\utilities\\DisableFormValueModelBindingAttribute.cs",
-              "ToolTip": "C:\\Users\\gearg\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\MusicFreeBack\\MusicFree\\utilities\\DisableFormValueModelBindingAttribute.cs",
-              "RelativeToolTip": "MusicFree\\utilities\\DisableFormValueModelBindingAttribute.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAEAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-26T15:39:22.86Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
               "Title": "MusicService.cs",
-              "DocumentMoniker": "C:\\Users\\gearg\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\MusicFreeBack\\MusicFree\\Services\\MusicService.cs",
+              "DocumentMoniker": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Services\\MusicService.cs",
               "RelativeDocumentMoniker": "MusicFree\\Services\\MusicService.cs",
-              "ToolTip": "C:\\Users\\gearg\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\MusicFreeBack\\MusicFree\\Services\\MusicService.cs",
+              "ToolTip": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Services\\MusicService.cs",
               "RelativeToolTip": "MusicFree\\Services\\MusicService.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AgIAAIYAAAAAAAAAAAAAwJQAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-26T12:25:27.855Z"
+              "WhenOpened": "2025-09-10T19:45:08.125Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "MultipartRequestHelper.cs",
-              "DocumentMoniker": "C:\\Users\\gearg\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\MusicFreeBack\\MusicFree\\utilities\\MultipartRequestHelper.cs",
-              "RelativeDocumentMoniker": "MusicFree\\utilities\\MultipartRequestHelper.cs",
-              "ToolTip": "C:\\Users\\gearg\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\MusicFreeBack\\MusicFree\\utilities\\MultipartRequestHelper.cs",
-              "RelativeToolTip": "MusicFree\\utilities\\MultipartRequestHelper.cs",
-              "ViewState": "AQIAABQAAAAAAAAAAAAQwCMAAAAeAAAA",
+              "DocumentIndex": 11,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "MusicFree\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "MusicFree\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-26T09:40:35.49Z"
+              "WhenOpened": "2025-09-10T18:10:43.89Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "MusicUploadModel.cs",
-              "DocumentMoniker": "C:\\Users\\gearg\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\MusicFreeBack\\MusicFree\\Models\\MusicUploadModel.cs",
-              "RelativeDocumentMoniker": "MusicFree\\Models\\MusicUploadModel.cs",
-              "ToolTip": "C:\\Users\\gearg\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\MusicFreeBack\\MusicFree\\Models\\MusicUploadModel.cs",
-              "RelativeToolTip": "MusicFree\\Models\\MusicUploadModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAaAAAA",
+              "DocumentIndex": 8,
+              "Title": "AuthenticationController.cs",
+              "DocumentMoniker": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Controllers\\AuthenticationController.cs",
+              "RelativeDocumentMoniker": "MusicFree\\Controllers\\AuthenticationController.cs",
+              "ToolTip": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Controllers\\AuthenticationController.cs",
+              "RelativeToolTip": "MusicFree\\Controllers\\AuthenticationController.cs",
+              "ViewState": "AgIAAGkAAAAAAAAAAAAowBYBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-25T20:51:21.882Z"
+              "WhenOpened": "2025-09-10T17:50:13.624Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "AuthorReturn.cs",
+              "DocumentMoniker": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Models\\DataReturnModel\\AuthorReturn.cs",
+              "RelativeDocumentMoniker": "MusicFree\\Models\\DataReturnModel\\AuthorReturn.cs",
+              "ToolTip": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Models\\DataReturnModel\\AuthorReturn.cs",
+              "RelativeToolTip": "MusicFree\\Models\\DataReturnModel\\AuthorReturn.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-14T10:55:48.948Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "GenreController.cs",
+              "DocumentMoniker": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Controllers\\GenreController.cs",
+              "RelativeDocumentMoniker": "MusicFree\\Controllers\\GenreController.cs",
+              "ToolTip": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Controllers\\GenreController.cs",
+              "RelativeToolTip": "MusicFree\\Controllers\\GenreController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-14T17:01:21.074Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 14,
               "Title": "Song.cs",
-              "DocumentMoniker": "C:\\Users\\gearg\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\MusicFreeBack\\MusicFree\\Models\\Song.cs",
+              "DocumentMoniker": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Models\\Song.cs",
               "RelativeDocumentMoniker": "MusicFree\\Models\\Song.cs",
-              "ToolTip": "C:\\Users\\gearg\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\MusicFreeBack\\MusicFree\\Models\\Song.cs",
+              "ToolTip": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Models\\Song.cs",
               "RelativeToolTip": "MusicFree\\Models\\Song.cs",
-              "ViewState": "AQIAABIAAAAAAAAAAAAAABUAAAAmAAAA",
+              "ViewState": "AgIAACEAAAAAAAAAAAA3wBQAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-25T20:51:15.598Z"
+              "WhenOpened": "2025-10-06T22:19:17.444Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Musician.cs",
-              "DocumentMoniker": "C:\\Users\\gearg\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\MusicFreeBack\\MusicFree\\Models\\Musician.cs",
-              "RelativeDocumentMoniker": "MusicFree\\Models\\Musician.cs",
-              "ToolTip": "C:\\Users\\gearg\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\MusicFreeBack\\MusicFree\\Models\\Musician.cs",
-              "RelativeToolTip": "MusicFree\\Models\\Musician.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAAABoAAAA2AAAA",
+              "DocumentIndex": 12,
+              "Title": "CoverSrcParent.cs",
+              "DocumentMoniker": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Models\\DataReturnModel\\CoverSrcParent.cs",
+              "RelativeDocumentMoniker": "MusicFree\\Models\\DataReturnModel\\CoverSrcParent.cs",
+              "ToolTip": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Models\\DataReturnModel\\CoverSrcParent.cs",
+              "RelativeToolTip": "MusicFree\\Models\\DataReturnModel\\CoverSrcParent.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-19T15:46:37.51Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-06T18:32:57.134Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "TagCollection.cs",
+              "DocumentMoniker": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Models\\GenreAndName\\TagCollection.cs",
+              "RelativeDocumentMoniker": "MusicFree\\Models\\GenreAndName\\TagCollection.cs",
+              "ToolTip": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Models\\GenreAndName\\TagCollection.cs",
+              "RelativeToolTip": "MusicFree\\Models\\GenreAndName\\TagCollection.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAqwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-06T23:00:16.888Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "UserSearch.cs",
+              "DocumentMoniker": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Models\\UserSearch.cs",
+              "RelativeDocumentMoniker": "MusicFree\\Models\\UserSearch.cs",
+              "ToolTip": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Models\\UserSearch.cs",
+              "RelativeToolTip": "MusicFree\\Models\\UserSearch.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-08T21:16:39.099Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "FreeMusicContext.cs",
+              "DocumentMoniker": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\FreeMusicContext.cs",
+              "RelativeDocumentMoniker": "MusicFree\\FreeMusicContext.cs",
+              "ToolTip": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\FreeMusicContext.cs",
+              "RelativeToolTip": "MusicFree\\FreeMusicContext.cs",
+              "ViewState": "AgIAAE4AAAAAAAAAAAArwFkAAABRAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-10T16:47:17.555Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Musician.cs",
+              "DocumentMoniker": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Models\\Musician.cs",
+              "RelativeDocumentMoniker": "MusicFree\\Models\\Musician.cs",
+              "ToolTip": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Models\\Musician.cs",
+              "RelativeToolTip": "MusicFree\\Models\\Musician.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAuwCAAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-14T10:22:20.957Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Albumn.cs",
+              "DocumentMoniker": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Models\\Albumn.cs",
+              "RelativeDocumentMoniker": "MusicFree\\Models\\Albumn.cs",
+              "ToolTip": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Models\\Albumn.cs",
+              "RelativeToolTip": "MusicFree\\Models\\Albumn.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAA4wDIAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-06T20:11:28.446Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 20,
-              "Title": "AuthorReturn.cs",
-              "DocumentMoniker": "C:\\Users\\gearg\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\MusicFreeBack\\MusicFree\\Models\\AuthorReturn.cs",
-              "RelativeDocumentMoniker": "MusicFree\\Models\\AuthorReturn.cs",
-              "ToolTip": "C:\\Users\\gearg\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\MusicFreeBack\\MusicFree\\Models\\AuthorReturn.cs",
-              "RelativeToolTip": "MusicFree\\Models\\AuthorReturn.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAYAAAA",
+              "Title": "ReturnParent.cs",
+              "DocumentMoniker": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Models\\DataReturnModel\\ReturnParent.cs",
+              "RelativeDocumentMoniker": "MusicFree\\Models\\DataReturnModel\\ReturnParent.cs",
+              "ToolTip": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Models\\DataReturnModel\\ReturnParent.cs",
+              "RelativeToolTip": "MusicFree\\Models\\DataReturnModel\\ReturnParent.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-19T15:45:19.402Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "MusicController.cs",
-              "DocumentMoniker": "C:\\Users\\gearg\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\MusicFreeBack\\MusicFree\\Controllers\\MusicController.cs",
-              "RelativeDocumentMoniker": "MusicFree\\Controllers\\MusicController.cs",
-              "ToolTip": "C:\\Users\\gearg\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\MusicFreeBack\\MusicFree\\Controllers\\MusicController.cs",
-              "RelativeToolTip": "MusicFree\\Controllers\\MusicController.cs",
-              "ViewState": "AQIAAGcAAAAAAAAAAAAkwBkAAAAGAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-19T14:30:58.755Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-03T00:56:42.401Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 21,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\gearg\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\MusicFreeBack\\MusicFree\\Program.cs",
-              "RelativeDocumentMoniker": "MusicFree\\Program.cs",
-              "ToolTip": "C:\\Users\\gearg\\OneDrive\\\u0414\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u044B\\GitHub\\MusicFreeBack\\MusicFree\\Program.cs",
-              "RelativeToolTip": "MusicFree\\Program.cs",
-              "ViewState": "AQIAAC4AAAAAAAAAAAAtwDwAAAAEAAAA",
+              "Title": "EmailService.cs",
+              "DocumentMoniker": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Services\\EmailService.cs",
+              "RelativeDocumentMoniker": "MusicFree\\Services\\EmailService.cs",
+              "ToolTip": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Services\\EmailService.cs",
+              "RelativeToolTip": "MusicFree\\Services\\EmailService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-19T14:06:39.452Z"
+              "WhenOpened": "2025-10-12T18:36:30.661Z"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "ViewClass.cs",
+              "DocumentMoniker": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Models\\ViewClass.cs",
+              "RelativeDocumentMoniker": "MusicFree\\Models\\ViewClass.cs",
+              "ToolTip": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Models\\ViewClass.cs",
+              "RelativeToolTip": "MusicFree\\Models\\ViewClass.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-09T17:03:06.927Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "LikesAndPlaylistsController.cs",
+              "DocumentMoniker": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Controllers\\LikesAndPlaylistsController.cs",
+              "RelativeDocumentMoniker": "MusicFree\\Controllers\\LikesAndPlaylistsController.cs",
+              "ToolTip": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Controllers\\LikesAndPlaylistsController.cs",
+              "RelativeToolTip": "MusicFree\\Controllers\\LikesAndPlaylistsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-10T18:10:45.118Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "ListenedController.cs",
+              "DocumentMoniker": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Controllers\\ListenedController.cs",
+              "RelativeDocumentMoniker": "MusicFree\\Controllers\\ListenedController.cs",
+              "ToolTip": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Controllers\\ListenedController.cs",
+              "RelativeToolTip": "MusicFree\\Controllers\\ListenedController.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAkwMkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-14T10:29:34.808Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "TempContext.cs",
+              "DocumentMoniker": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\TempContext.cs",
+              "RelativeDocumentMoniker": "MusicFree\\TempContext.cs",
+              "ToolTip": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\TempContext.cs",
+              "RelativeToolTip": "MusicFree\\TempContext.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAwAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-10T19:45:05.239Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "SongForm.cs",
+              "DocumentMoniker": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Models\\InputModels\\SongForm.cs",
+              "RelativeDocumentMoniker": "MusicFree\\Models\\InputModels\\SongForm.cs",
+              "ToolTip": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Models\\InputModels\\SongForm.cs",
+              "RelativeToolTip": "MusicFree\\Models\\InputModels\\SongForm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-14T13:58:30.994Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "UsernameInput.cs",
+              "DocumentMoniker": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Models\\InputModels\\UsernameInput.cs",
+              "RelativeDocumentMoniker": "MusicFree\\Models\\InputModels\\UsernameInput.cs",
+              "ToolTip": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Models\\InputModels\\UsernameInput.cs",
+              "RelativeToolTip": "MusicFree\\Models\\InputModels\\UsernameInput.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-19T09:47:41.93Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "TagtoSong.cs",
+              "DocumentMoniker": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Models\\GenreAndName\\TagtoSong.cs",
+              "RelativeDocumentMoniker": "MusicFree\\Models\\GenreAndName\\TagtoSong.cs",
+              "ToolTip": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Models\\GenreAndName\\TagtoSong.cs",
+              "RelativeToolTip": "MusicFree\\Models\\GenreAndName\\TagtoSong.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-06T23:00:14.044Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "MultipartRequestHelper.cs",
+              "DocumentMoniker": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\utilities\\MultipartRequestHelper.cs",
+              "RelativeDocumentMoniker": "MusicFree\\utilities\\MultipartRequestHelper.cs",
+              "ToolTip": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\utilities\\MultipartRequestHelper.cs",
+              "RelativeToolTip": "MusicFree\\utilities\\MultipartRequestHelper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-09T17:56:03.436Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "RoleLoginInput.cs",
+              "DocumentMoniker": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Models\\InputModels\\RoleLoginInput.cs",
+              "RelativeDocumentMoniker": "MusicFree\\Models\\InputModels\\RoleLoginInput.cs",
+              "ToolTip": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Models\\InputModels\\RoleLoginInput.cs",
+              "RelativeToolTip": "MusicFree\\Models\\InputModels\\RoleLoginInput.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-09T17:03:01.442Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "LoginInput.cs",
+              "DocumentMoniker": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Models\\InputModels\\LoginInput.cs",
+              "RelativeDocumentMoniker": "MusicFree\\Models\\InputModels\\LoginInput.cs",
+              "ToolTip": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Models\\InputModels\\LoginInput.cs",
+              "RelativeToolTip": "MusicFree\\Models\\InputModels\\LoginInput.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-09T17:03:02.602Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "Genre.cs",
+              "DocumentMoniker": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Models\\GenreAndName\\Genre.cs",
+              "RelativeDocumentMoniker": "MusicFree\\Models\\GenreAndName\\Genre.cs",
+              "ToolTip": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Models\\GenreAndName\\Genre.cs",
+              "RelativeToolTip": "MusicFree\\Models\\GenreAndName\\Genre.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-06T19:42:04.214Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "UserSong.cs",
+              "DocumentMoniker": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Models\\UserSong.cs",
+              "RelativeDocumentMoniker": "MusicFree\\Models\\UserSong.cs",
+              "ToolTip": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Models\\UserSong.cs",
+              "RelativeToolTip": "MusicFree\\Models\\UserSong.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-08T21:50:25.277Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "SongViews.cs",
+              "DocumentMoniker": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Models\\SongViews.cs",
+              "RelativeDocumentMoniker": "MusicFree\\Models\\SongViews.cs",
+              "ToolTip": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Models\\SongViews.cs",
+              "RelativeToolTip": "MusicFree\\Models\\SongViews.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-08T21:16:34.746Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "UserRoles.cs",
+              "DocumentMoniker": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\UserRoles.cs",
+              "RelativeDocumentMoniker": "MusicFree\\UserRoles.cs",
+              "ToolTip": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\UserRoles.cs",
+              "RelativeToolTip": "MusicFree\\UserRoles.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-10T19:45:06.782Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "LastSearch.cs",
+              "DocumentMoniker": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Models\\LastSearch.cs",
+              "RelativeDocumentMoniker": "MusicFree\\Models\\LastSearch.cs",
+              "ToolTip": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Models\\LastSearch.cs",
+              "RelativeToolTip": "MusicFree\\Models\\LastSearch.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAwwDkAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-08T21:51:41.559Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "GenretoSong.cs",
+              "DocumentMoniker": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Models\\GenreAndName\\GenretoSong.cs",
+              "RelativeDocumentMoniker": "MusicFree\\Models\\GenreAndName\\GenretoSong.cs",
+              "ToolTip": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Models\\GenreAndName\\GenretoSong.cs",
+              "RelativeToolTip": "MusicFree\\Models\\GenreAndName\\GenretoSong.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-06T23:00:16.23Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "GenreTag.cs",
+              "DocumentMoniker": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Models\\GenreAndName\\GenreTag.cs",
+              "RelativeDocumentMoniker": "MusicFree\\Models\\GenreAndName\\GenreTag.cs",
+              "ToolTip": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Models\\GenreAndName\\GenreTag.cs",
+              "RelativeToolTip": "MusicFree\\Models\\GenreAndName\\GenreTag.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-06T18:33:05.5Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "GenreTagCollection.cs",
+              "DocumentMoniker": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Models\\GenreAndName\\GenreTagCollection.cs",
+              "RelativeDocumentMoniker": "MusicFree\\Models\\GenreAndName\\GenreTagCollection.cs",
+              "ToolTip": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Models\\GenreAndName\\GenreTagCollection.cs",
+              "RelativeToolTip": "MusicFree\\Models\\GenreAndName\\GenreTagCollection.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-06T22:13:06.9Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "GenretoAlbumn.cs",
+              "DocumentMoniker": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Models\\GenreAndName\\GenretoAlbumn.cs",
+              "RelativeDocumentMoniker": "MusicFree\\Models\\GenreAndName\\GenretoAlbumn.cs",
+              "ToolTip": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Models\\GenreAndName\\GenretoAlbumn.cs",
+              "RelativeToolTip": "MusicFree\\Models\\GenreAndName\\GenretoAlbumn.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-06T20:05:58.533Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "AutoIncrementedParent.cs",
+              "DocumentMoniker": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Models\\AutoIncrementedParent.cs",
+              "RelativeDocumentMoniker": "MusicFree\\Models\\AutoIncrementedParent.cs",
+              "ToolTip": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Models\\AutoIncrementedParent.cs",
+              "RelativeToolTip": "MusicFree\\Models\\AutoIncrementedParent.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-06T18:33:12.924Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "GenreAndNameCollection.cs",
+              "DocumentMoniker": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Models\\GenreAndName\\GenreAndNameCollection.cs",
+              "RelativeDocumentMoniker": "MusicFree\\Models\\GenreAndName\\GenreAndNameCollection.cs",
+              "ToolTip": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Models\\GenreAndName\\GenreAndNameCollection.cs",
+              "RelativeToolTip": "MusicFree\\Models\\GenreAndName\\GenreAndNameCollection.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-06T22:13:01.738Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "GenreCollection.cs",
+              "DocumentMoniker": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Models\\GenreAndName\\GenreCollection.cs",
+              "RelativeDocumentMoniker": "MusicFree\\Models\\GenreAndName\\GenreCollection.cs",
+              "ToolTip": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Models\\GenreAndName\\GenreCollection.cs",
+              "RelativeToolTip": "MusicFree\\Models\\GenreAndName\\GenreCollection.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-06T22:13:03.108Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "GenreGenre.cs",
+              "DocumentMoniker": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Models\\GenreAndName\\GenreGenre.cs",
+              "RelativeDocumentMoniker": "MusicFree\\Models\\GenreAndName\\GenreGenre.cs",
+              "ToolTip": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Models\\GenreAndName\\GenreGenre.cs",
+              "RelativeToolTip": "MusicFree\\Models\\GenreAndName\\GenreGenre.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-06T22:13:04.446Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "DataProtectorProvidercs.cs",
+              "DocumentMoniker": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\DataProtectorProvidercs.cs",
+              "RelativeDocumentMoniker": "MusicFree\\DataProtectorProvidercs.cs",
+              "ToolTip": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\DataProtectorProvidercs.cs",
+              "RelativeToolTip": "MusicFree\\DataProtectorProvidercs.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-14T13:40:30.184Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "CustonCookie.cs",
+              "DocumentMoniker": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\CustonCookie.cs",
+              "RelativeDocumentMoniker": "MusicFree\\CustonCookie.cs",
+              "ToolTip": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\CustonCookie.cs",
+              "RelativeToolTip": "MusicFree\\CustonCookie.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-05T20:28:42.631Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "CustomXMLRepository.cs",
+              "DocumentMoniker": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\CustomXMLRepository.cs",
+              "RelativeDocumentMoniker": "MusicFree\\CustomXMLRepository.cs",
+              "ToolTip": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\CustomXMLRepository.cs",
+              "RelativeToolTip": "MusicFree\\CustomXMLRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-14T13:15:37.611Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "PaginationreturnData.cs",
+              "DocumentMoniker": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Models\\DataReturnModel\\PaginationreturnData.cs",
+              "RelativeDocumentMoniker": "MusicFree\\Models\\DataReturnModel\\PaginationreturnData.cs",
+              "ToolTip": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Models\\DataReturnModel\\PaginationreturnData.cs",
+              "RelativeToolTip": "MusicFree\\Models\\DataReturnModel\\PaginationreturnData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-06T18:32:12.633Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "Microsoft.Common.CurrentVersion.targets",
+              "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
+              "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\MSBuild\\Current\\Bin\\amd64\\Microsoft.Common.CurrentVersion.targets",
+              "ViewState": "AgIAABoTAAAAAAAAAAAuwDETAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2025-10-06T20:09:44.769Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "NamIdReturn.cs",
+              "DocumentMoniker": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Models\\DataReturnModel\\NamIdReturn.cs",
+              "RelativeDocumentMoniker": "MusicFree\\Models\\DataReturnModel\\NamIdReturn.cs",
+              "ToolTip": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Models\\DataReturnModel\\NamIdReturn.cs",
+              "RelativeToolTip": "MusicFree\\Models\\DataReturnModel\\NamIdReturn.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-06T19:42:18.304Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "User_Context.cs",
+              "DocumentMoniker": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\User_Context.cs",
+              "RelativeDocumentMoniker": "MusicFree\\User_Context.cs",
+              "ToolTip": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\User_Context.cs",
+              "RelativeToolTip": "MusicFree\\User_Context.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-10T16:47:16.093Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "MusicFree.csproj",
+              "DocumentMoniker": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\MusicFree.csproj",
+              "RelativeDocumentMoniker": "MusicFree\\MusicFree.csproj",
+              "ToolTip": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\MusicFree.csproj",
+              "RelativeToolTip": "MusicFree\\MusicFree.csproj",
+              "ViewState": "AgIAABIAAAAAAAAAAAAowAkAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-09-11T12:29:45.638Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "GoogleAutenthicationReturn.cs",
+              "DocumentMoniker": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Models\\ExtraModels\\GoogleAutenthicationReturn.cs",
+              "RelativeDocumentMoniker": "MusicFree\\Models\\ExtraModels\\GoogleAutenthicationReturn.cs",
+              "ToolTip": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Models\\ExtraModels\\GoogleAutenthicationReturn.cs",
+              "RelativeToolTip": "MusicFree\\Models\\ExtraModels\\GoogleAutenthicationReturn.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-18T18:04:11.394Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 54,
+              "Title": "MainParent.cs",
+              "DocumentMoniker": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Models\\MainParent.cs",
+              "RelativeDocumentMoniker": "MusicFree\\Models\\MainParent.cs",
+              "ToolTip": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Models\\MainParent.cs",
+              "RelativeToolTip": "MusicFree\\Models\\MainParent.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-06T18:33:08.269Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 56,
+              "Title": "NameIdReturnData.cs",
+              "DocumentMoniker": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Models\\DataReturnModel\\NameIdReturnData.cs",
+              "RelativeDocumentMoniker": "MusicFree\\Models\\DataReturnModel\\NameIdReturnData.cs",
+              "ToolTip": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Models\\DataReturnModel\\NameIdReturnData.cs",
+              "RelativeToolTip": "MusicFree\\Models\\DataReturnModel\\NameIdReturnData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-03T00:56:45.12Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 55,
+              "Title": "StackModel.cs",
+              "DocumentMoniker": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Models\\TempModels\\StackModel.cs",
+              "RelativeDocumentMoniker": "MusicFree\\Models\\TempModels\\StackModel.cs",
+              "ToolTip": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Models\\TempModels\\StackModel.cs",
+              "RelativeToolTip": "MusicFree\\Models\\TempModels\\StackModel.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAowBYAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-03T17:19:00.925Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 57,
+              "Title": "ListenedInput.cs",
+              "DocumentMoniker": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Models\\InputModels\\ListenedInput.cs",
+              "RelativeDocumentMoniker": "MusicFree\\Models\\InputModels\\ListenedInput.cs",
+              "ToolTip": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Models\\InputModels\\ListenedInput.cs",
+              "RelativeToolTip": "MusicFree\\Models\\InputModels\\ListenedInput.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-03T00:44:24.058Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 58,
+              "Title": "PageReturn.cs",
+              "DocumentMoniker": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Models\\DataReturnModel\\PageReturn.cs",
+              "RelativeDocumentMoniker": "MusicFree\\Models\\DataReturnModel\\PageReturn.cs",
+              "ToolTip": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Models\\DataReturnModel\\PageReturn.cs",
+              "RelativeToolTip": "MusicFree\\Models\\DataReturnModel\\PageReturn.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-03T00:56:41.675Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 59,
+              "Title": "SearchReturn.cs",
+              "DocumentMoniker": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Models\\DataReturnModel\\SearchReturn.cs",
+              "RelativeDocumentMoniker": "MusicFree\\Models\\DataReturnModel\\SearchReturn.cs",
+              "ToolTip": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Models\\DataReturnModel\\SearchReturn.cs",
+              "RelativeToolTip": "MusicFree\\Models\\DataReturnModel\\SearchReturn.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-03T00:56:43.328Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 60,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Models\\User.cs",
+              "RelativeDocumentMoniker": "MusicFree\\Models\\User.cs",
+              "ToolTip": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Models\\User.cs",
+              "RelativeToolTip": "MusicFree\\Models\\User.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAA3wDMAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-18T20:58:23.264Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 61,
+              "Title": "DataProtector.cs",
+              "DocumentMoniker": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\DataProtector.cs",
+              "RelativeDocumentMoniker": "MusicFree\\DataProtector.cs",
+              "ToolTip": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\DataProtector.cs",
+              "RelativeToolTip": "MusicFree\\DataProtector.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-14T12:44:02.057Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 62,
+              "Title": "secrets.json",
+              "DocumentMoniker": "C:\\Users\\\u0418\u043B\u044C\u044F\\AppData\\Roaming\\Microsoft\\UserSecrets\\02b8ec79-430e-447d-99ae-7bc77844c580\\secrets.json",
+              "RelativeDocumentMoniker": "..\\..\\..\\AppData\\Roaming\\Microsoft\\UserSecrets\\02b8ec79-430e-447d-99ae-7bc77844c580\\secrets.json",
+              "ToolTip": "C:\\Users\\\u0418\u043B\u044C\u044F\\AppData\\Roaming\\Microsoft\\UserSecrets\\02b8ec79-430e-447d-99ae-7bc77844c580\\secrets.json",
+              "RelativeToolTip": "..\\..\\..\\AppData\\Roaming\\Microsoft\\UserSecrets\\02b8ec79-430e-447d-99ae-7bc77844c580\\secrets.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-09-10T16:55:17.672Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 64,
+              "Title": "Add_To_Playlist.cs",
+              "DocumentMoniker": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Models\\InputModels\\Add_To_Playlist.cs",
+              "RelativeDocumentMoniker": "MusicFree\\Models\\InputModels\\Add_To_Playlist.cs",
+              "ToolTip": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Models\\InputModels\\Add_To_Playlist.cs",
+              "RelativeToolTip": "MusicFree\\Models\\InputModels\\Add_To_Playlist.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-14T12:50:38.945Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 63,
+              "Title": "IdReturnParent.cs",
+              "DocumentMoniker": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Models\\DataReturnModel\\IdReturnParent.cs",
+              "RelativeDocumentMoniker": "MusicFree\\Models\\DataReturnModel\\IdReturnParent.cs",
+              "ToolTip": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Models\\DataReturnModel\\IdReturnParent.cs",
+              "RelativeToolTip": "MusicFree\\Models\\DataReturnModel\\IdReturnParent.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-14T12:51:11.629Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 65,
+              "Title": "UserAlbumn.cs",
+              "DocumentMoniker": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Models\\UserAlbumn.cs",
+              "RelativeDocumentMoniker": "MusicFree\\Models\\UserAlbumn.cs",
+              "ToolTip": "C:\\Users\\\u0418\u043B\u044C\u044F\\Desktop\\MusicFree\\MusicFree\\MusicFree\\Models\\UserAlbumn.cs",
+              "RelativeToolTip": "MusicFree\\Models\\UserAlbumn.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-14T12:50:29.691Z"
             }
           ]
         }
